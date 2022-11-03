@@ -58,12 +58,17 @@ type schemaEntry struct {
 }
 
 var schemaTemplate = `
+{{ define "schemaItem" -}}
+	"{{.KeyName}}": {
+		Type: {{.TypeText}}
+		{{- if eq .Type 5 }}
+		MaxItems: 1,
+		{{- end }}
+	},
+{{- end }}
     Schema: map[string]*schema.Schema{
     	{{ range . -}}
-		"{{.KeyName}}": {
-    		Type: {{.TypeText}}
-    		{{if eq .Type 5}}MaxItems: 1,{{end}}
-    	},
+		{{ template "schemaItem" . }}
     	{{ end }}
     }
 `
