@@ -106,6 +106,7 @@ func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
 	}
 	if listItem, ok := entry.([]interface{}); ok {
 		elems := make(map[string]schemaEntry)
+		// TODO: handle non-object (ex. array of strings) items with another assertion
 		if mapItem, ok := listItem[0].(map[string]interface{}); ok {
 			for k, v := range mapItem {
 				elems[k] = newSchemaEntry(k, v)
