@@ -11,9 +11,10 @@ import (
 )
 
 func main() {
-	fmt.Println("parsing request schema")
-
-	b, err := os.ReadFile("testdata/medialive-input-post-schema.json")
+	if len(os.Args) != 2 {
+		log.Fatal("unexpected number of args")
+	}
+	b, err := os.ReadFile(os.Args[1])
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -23,12 +24,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	var in map[string]interface{}
-	if err = json.Unmarshal(bv, &in); err != nil {
+	var reqData map[string]interface{}
+	if err = json.Unmarshal(bv, &reqData); err != nil {
 		log.Fatal(err)
 	}
 
-	out, err := populateTemplate(in)
+	out, err := execTemplate(reqData)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -140,14 +141,11 @@ func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
 	return schemaEntry{KeyName: keyName, Type: typeUnknown, TypeText: typeTextUnknown}
 }
 
-func populateTemplate(in map[string]interface{}) ([]byte, error) {
+func execTemplate(reqData map[string]interface{}) ([]byte, error) {
 	entries := make(map[string]schemaEntry)
-	for k, v := range in {
+	for k, v := range reqData {
 		entries[k] = newSchemaEntry(k, v)
 	}
-	tmp, _ := json.MarshalIndent(entries, "", "  ")
-	fmt.Printf("writing processed object to: %s\n", "processed.json")
-	os.WriteFile("processed.json", tmp, 0644)
 
 	tmpl, err := template.New("schema").Parse(schemaTemplate)
 	if err != nil {
