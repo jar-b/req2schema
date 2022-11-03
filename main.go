@@ -59,10 +59,10 @@ type schemaEntry struct {
 
 var schemaTemplate = `
     Schema: map[string]*schema.Schema{
-    	{{ range $key, $attr := . -}}
-		"{{$key}}": {
-    		Type: {{$attr.TypeText}}
-    		{{if eq $attr.Type 5}}MaxItems: 1,{{end}}
+    	{{ range . -}}
+		"{{.KeyName}}": {
+    		Type: {{.TypeText}}
+    		{{if eq .Type 5}}MaxItems: 1,{{end}}
     	},
     	{{ end }}
     }
