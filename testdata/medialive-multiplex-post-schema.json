@@ -1,0 +1,15 @@
+{
+  "requestId": "string",
+  "name": "string",
+  "availabilityZones": [
+    "string"
+  ],
+  "multiplexSettings": {
+    "transportStreamId": integer,
+    "transportStreamBitrate": integer,
+    "transportStreamReservedBitrate": integer,
+    "maximumVideoBufferDelayMilliseconds": integer
+  },
+  "tags": {
+  }
+}
