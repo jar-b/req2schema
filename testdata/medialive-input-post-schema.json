@@ -1,0 +1,41 @@
+{
+  "requestId": "string",
+  "name": "string",
+  "sources": [
+    {
+      "url": "string",
+      "username": "string",
+      "passwordParam": "string"
+    }
+  ],
+  "destinations": [
+    {
+      "streamName": "string"
+    }
+  ],
+  "type": enum,
+  "inputSecurityGroups": [
+    "string"
+  ],
+  "mediaConnectFlows": [
+    {
+      "flowArn": "string"
+    }
+  ],
+  "inputDevices": [
+    {
+      "id": "string"
+    }
+  ],
+  "roleArn": "string",
+  "tags": {
+  },
+  "vpc": {
+    "subnetIds": [
+      "string"
+    ],
+    "securityGroupIds": [
+      "string"
+    ]
+  }
+}

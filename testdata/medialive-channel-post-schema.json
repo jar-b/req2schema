@@ -1,0 +1,982 @@
+{
+  "requestId": "string",
+  "name": "string",
+  "inputAttachments": [
+    {
+      "inputId": "string",
+      "inputAttachmentName": "string",
+      "inputSettings": {
+        "networkInputSettings": {
+          "hlsInputSettings": {
+            "bandwidth": integer,
+            "retries": integer,
+            "retryInterval": integer,
+            "bufferSegments": integer,
+            "scte35Source": enum
+          },
+          "serverValidation": enum
+        },
+        "sourceEndBehavior": enum,
+        "inputFilter": enum,
+        "filterStrength": integer,
+        "deblockFilter": enum,
+        "denoiseFilter": enum,
+        "smpte2038DataPreference": enum,
+        "videoSelector": {
+          "selectorSettings": {
+            "videoSelectorProgramId": {
+              "programId": integer
+            },
+            "videoSelectorPid": {
+              "pid": integer
+            }
+          },
+          "colorSpace": enum,
+          "colorSpaceUsage": enum,
+          "colorSpaceSettings": {
+            "hdr10Settings": {
+              "maxCll": integer,
+              "maxFall": integer
+            }
+          }
+        },
+        "audioSelectors": [
+          {
+            "name": "string",
+            "selectorSettings": {
+              "audioHlsRenditionSelection": {
+                "groupId": "string",
+                "name": "string"
+              },
+              "audioLanguageSelection": {
+                "languageCode": "string",
+                "languageSelectionPolicy": enum
+              },
+              "audioPidSelection": {
+                "pid": integer
+              },
+              "audioTrackSelection": {
+                "tracks": [
+                  {
+                    "track": integer
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "captionSelectors": [
+          {
+            "selectorSettings": {
+              "embeddedSourceSettings": {
+                "source608ChannelNumber": integer,
+                "source608TrackNumber": integer,
+                "convert608To708": enum,
+                "scte20Detection": enum
+              },
+              "teletextSourceSettings": {
+                "pageNumber": "string",
+                "outputRectangle": {
+                  "leftOffset": number,
+                  "width": number,
+                  "topOffset": number,
+                  "height": number
+                }
+              },
+              "scte27SourceSettings": {
+                "pid": integer,
+                "ocrLanguage": enum
+              },
+              "scte20SourceSettings": {
+                "source608ChannelNumber": integer,
+                "convert608To708": enum
+              },
+              "dvbSubSourceSettings": {
+                "pid": integer,
+                "ocrLanguage": enum
+              },
+              "ancillarySourceSettings": {
+                "sourceAncillaryChannelNumber": integer
+              },
+              "aribSourceSettings": {
+              }
+            },
+            "name": "string",
+            "languageCode": "string"
+          }
+        ]
+      },
+      "automaticInputFailoverSettings": {
+        "secondaryInputId": "string",
+        "inputPreference": enum,
+        "errorClearTimeMsec": integer,
+        "failoverConditions": [
+          {
+            "failoverConditionSettings": {
+              "inputLossSettings": {
+                "inputLossThresholdMsec": integer
+              },
+              "videoBlackSettings": {
+                "videoBlackThresholdMsec": integer,
+                "blackDetectThreshold": number
+              },
+              "audioSilenceSettings": {
+                "audioSilenceThresholdMsec": integer,
+                "audioSelectorName": "string"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "inputSpecification": {
+    "codec": enum,
+    "resolution": enum,
+    "maximumBitrate": enum
+  },
+  "cdiInputSpecification": {
+    "resolution": enum
+  },
+  "destinations": [
+    {
+      "id": "string",
+      "settings": [
+        {
+          "url": "string",
+          "username": "string",
+          "passwordParam": "string",
+          "streamName": "string"
+        }
+      ],
+      "mediaPackageSettings": [
+        {
+          "channelId": "string"
+        }
+      ],
+      "multiplexSettings": {
+        "multiplexId": "string",
+        "programName": "string"
+      }
+    }
+  ],
+  "encoderSettings": {
+    "audioDescriptions": [
+      {
+        "audioSelectorName": "string",
+        "audioType": enum,
+        "codecSettings": {
+          "aacSettings": {
+            "inputType": enum,
+            "bitrate": number,
+            "codingMode": enum,
+            "rawFormat": enum,
+            "spec": enum,
+            "profile": enum,
+            "rateControlMode": enum,
+            "sampleRate": number,
+            "vbrQuality": enum
+          },
+          "ac3Settings": {
+            "bitrate": number,
+            "bitstreamMode": enum,
+            "codingMode": enum,
+            "dialnorm": integer,
+            "drcProfile": enum,
+            "metadataControl": enum,
+            "lfeFilter": enum
+          },
+          "eac3Settings": {
+            "attenuationControl": enum,
+            "bitrate": number,
+            "bitstreamMode": enum,
+            "codingMode": enum,
+            "dcFilter": enum,
+            "dialnorm": integer,
+            "drcLine": enum,
+            "drcRf": enum,
+            "lfeControl": enum,
+            "lfeFilter": enum,
+            "metadataControl": enum,
+            "loRoCenterMixLevel": number,
+            "loRoSurroundMixLevel": number,
+            "ltRtCenterMixLevel": number,
+            "ltRtSurroundMixLevel": number,
+            "passthroughControl": enum,
+            "phaseControl": enum,
+            "stereoDownmix": enum,
+            "surroundExMode": enum,
+            "surroundMode": enum
+          },
+          "mp2Settings": {
+            "codingMode": enum,
+            "bitrate": number,
+            "sampleRate": number
+          },
+          "passThroughSettings": {
+          },
+          "wavSettings": {
+            "codingMode": enum,
+            "sampleRate": number,
+            "bitDepth": number
+          }
+        },
+        "audioTypeControl": enum,
+        "languageCodeControl": enum,
+        "languageCode": "string",
+        "name": "string",
+        "remixSettings": {
+          "channelsIn": integer,
+          "channelsOut": integer,
+          "channelMappings": [
+            {
+              "outputChannel": integer,
+              "inputChannelLevels": [
+                {
+                  "inputChannel": integer,
+                  "gain": integer
+                }
+              ]
+            }
+          ]
+        },
+        "streamName": "string",
+        "audioWatermarkingSettings": {
+          "nielsenWatermarksSettings": {
+            "nielsenDistributionType": enum,
+            "nielsenCbetSettings": {
+              "csid": "string",
+              "cbetCheckDigitString": "string",
+              "cbetStepaside": enum
+            },
+            "nielsenNaesIiNwSettings": {
+              "sid": number,
+              "checkDigitString": "string"
+            }
+          }
+        },
+        "audioNormalizationSettings": {
+          "algorithm": enum,
+          "algorithmControl": enum,
+          "targetLkfs": number
+        }
+      }
+    ],
+    "availBlanking": {
+      "state": enum,
+      "availBlankingImage": {
+        "passwordParam": "string",
+        "uri": "string",
+        "username": "string"
+      }
+    },
+    "availConfiguration": {
+      "availSettings": {
+        "scte35TimeSignalApos": {
+          "webDeliveryAllowedFlag": enum,
+          "noRegionalBlackoutFlag": enum,
+          "adAvailOffset": integer
+        },
+        "scte35SpliceInsert": {
+          "webDeliveryAllowedFlag": enum,
+          "noRegionalBlackoutFlag": enum,
+          "adAvailOffset": integer
+        }
+      }
+    },
+    "blackoutSlate": {
+      "state": enum,
+      "blackoutSlateImage": {
+        "passwordParam": "string",
+        "uri": "string",
+        "username": "string"
+      },
+      "networkEndBlackout": enum,
+      "networkId": "string",
+      "networkEndBlackoutImage": {
+        "passwordParam": "string",
+        "uri": "string",
+        "username": "string"
+      }
+    },
+    "captionDescriptions": [
+      {
+        "name": "string",
+        "captionSelectorName": "string",
+        "languageCode": "string",
+        "destinationSettings": {
+          "dvbSubDestinationSettings": {
+            "font": {
+              "passwordParam": "string",
+              "uri": "string",
+              "username": "string"
+            },
+            "fontSize": "string",
+            "fontResolution": integer,
+            "alignment": enum,
+            "xPosition": integer,
+            "yPosition": integer,
+            "teletextGridControl": enum,
+            "fontColor": enum,
+            "fontOpacity": integer,
+            "backgroundColor": enum,
+            "backgroundOpacity": integer,
+            "outlineSize": integer,
+            "outlineColor": enum,
+            "shadowColor": enum,
+            "shadowOpacity": integer,
+            "shadowXOffset": integer,
+            "shadowYOffset": integer
+          },
+          "burnInDestinationSettings": {
+            "font": {
+              "passwordParam": "string",
+              "uri": "string",
+              "username": "string"
+            },
+            "fontSize": "string",
+            "fontResolution": integer,
+            "alignment": enum,
+            "xPosition": integer,
+            "yPosition": integer,
+            "teletextGridControl": enum,
+            "fontColor": enum,
+            "fontOpacity": integer,
+            "backgroundColor": enum,
+            "backgroundOpacity": integer,
+            "outlineSize": integer,
+            "outlineColor": enum,
+            "shadowColor": enum,
+            "shadowOpacity": integer,
+            "shadowXOffset": integer,
+            "shadowYOffset": integer
+          },
+          "ttmlDestinationSettings": {
+            "styleControl": enum
+          },
+          "webvttDestinationSettings": {
+            "styleControl": enum
+          },
+          "ebuTtDDestinationSettings": {
+            "styleControl": enum,
+            "fillLineGap": enum,
+            "fontFamily": "string",
+            "copyrightHolder": "string"
+          },
+          "aribDestinationSettings": {
+          },
+          "embeddedDestinationSettings": {
+          },
+          "embeddedPlusScte20DestinationSettings": {
+          },
+          "scte20PlusEmbeddedDestinationSettings": {
+          },
+          "rtmpCaptionInfoDestinationSettings": {
+          },
+          "smpteTtDestinationSettings": {
+          },
+          "teletextDestinationSettings": {
+          },
+          "scte27DestinationSettings": {
+          }
+        },
+        "languageDescription": "string"
+      }
+    ],
+    "globalConfiguration": {
+      "initialAudioGain": integer,
+      "supportLowFramerateInputs": enum,
+      "inputEndAction": enum,
+      "outputTimingSource": enum,
+      "inputLossBehavior": {
+        "repeatFrameMsec": integer,
+        "blackFrameMsec": integer,
+        "inputLossImageType": enum,
+        "inputLossImageColor": "string",
+        "inputLossImageSlate": {
+          "passwordParam": "string",
+          "uri": "string",
+          "username": "string"
+        }
+      },
+      "outputLockingMode": enum
+    },
+    "motionGraphicsConfiguration": {
+      "motionGraphicsInsertion": enum,
+      "motionGraphicsSettings": {
+        "htmlMotionGraphicsSettings": {
+        }
+      }
+    },
+    "featureActivations": {
+      "inputPrepareScheduleActions": enum
+    },
+    "outputGroups": [
+      {
+        "outputGroupSettings": {
+          "msSmoothGroupSettings": {
+            "inputLossAction": enum,
+            "fragmentLength": integer,
+            "eventId": "string",
+            "eventIdMode": enum,
+            "eventStopBehavior": enum,
+            "streamManifestBehavior": enum,
+            "timestampOffsetMode": enum,
+            "timestampOffset": "string",
+            "sparseTrackType": enum,
+            "acquisitionPointId": "string",
+            "connectionRetryInterval": integer,
+            "destination": {
+              "destinationRefId": "string"
+            },
+            "certificateMode": enum,
+            "numRetries": integer,
+            "filecacheDuration": integer,
+            "restartDelay": integer,
+            "segmentationMode": enum,
+            "sendDelayMs": integer,
+            "audioOnlyTimecodeControl": enum
+          },
+          "hlsGroupSettings": {
+            "incompleteSegmentBehavior": enum,
+            "discontinuityTags": enum,
+            "keyProviderSettings": {
+              "staticKeySettings": {
+                "staticKeyValue": "string",
+                "keyProviderServer": {
+                  "passwordParam": "string",
+                  "uri": "string",
+                  "username": "string"
+                }
+              }
+            },
+            "adMarkers": [
+              enum
+            ],
+            "baseUrlContent": "string",
+            "baseUrlContent1": "string",
+            "baseUrlManifest": "string",
+            "baseUrlManifest1": "string",
+            "captionLanguageSetting": enum,
+            "captionLanguageMappings": [
+              {
+                "captionChannel": integer,
+                "languageCode": "string",
+                "languageDescription": "string"
+              }
+            ],
+            "hlsCdnSettings": {
+              "hlsBasicPutSettings": {
+                "numRetries": integer,
+                "connectionRetryInterval": integer,
+                "restartDelay": integer,
+                "filecacheDuration": integer
+              },
+              "hlsMediaStoreSettings": {
+                "numRetries": integer,
+                "connectionRetryInterval": integer,
+                "restartDelay": integer,
+                "filecacheDuration": integer,
+                "mediaStoreStorageClass": enum
+              },
+              "hlsAkamaiSettings": {
+                "numRetries": integer,
+                "connectionRetryInterval": integer,
+                "restartDelay": integer,
+                "filecacheDuration": integer,
+                "token": "string",
+                "salt": "string",
+                "httpTransferMode": enum
+              },
+              "hlsWebdavSettings": {
+                "numRetries": integer,
+                "connectionRetryInterval": integer,
+                "restartDelay": integer,
+                "filecacheDuration": integer,
+                "httpTransferMode": enum
+              },
+              "hlsS3Settings": {
+                "logUploads": enum,
+                "cannedAcl": enum
+              }
+            },
+            "inputLossAction": enum,
+            "manifestCompression": enum,
+            "destination": {
+              "destinationRefId": "string"
+            },
+            "encryptionType": enum,
+            "ivInManifest": enum,
+            "ivSource": enum,
+            "constantIv": "string",
+            "clientCache": enum,
+            "tsFileMode": enum,
+            "manifestDurationFormat": enum,
+            "segmentationMode": enum,
+            "redundantManifest": enum,
+            "outputSelection": enum,
+            "streamInfResolution": enum,
+            "iFrameOnlyPlaylists": enum,
+            "indexNSegments": integer,
+            "programDateTime": enum,
+            "programDateTimePeriod": integer,
+            "keepSegments": integer,
+            "keyFormat": "string",
+            "keyFormatVersions": "string",
+            "minSegmentLength": integer,
+            "segmentLength": integer,
+            "timedMetadataId3Frame": enum,
+            "timedMetadataId3Period": integer,
+            "hlsId3SegmentTagging": enum,
+            "timestampDeltaMilliseconds": integer,
+            "codecSpecification": enum,
+            "directoryStructure": enum,
+            "segmentsPerSubdirectory": integer,
+            "mode": enum,
+            "programDateTimeClock": enum
+          },
+          "rtmpGroupSettings": {
+            "authenticationScheme": enum,
+            "cacheLength": integer,
+            "restartDelay": integer,
+            "cacheFullBehavior": enum,
+            "captionData": enum,
+            "inputLossAction": enum,
+            "adMarkers": [
+              enum
+            ]
+          },
+          "udpGroupSettings": {
+            "inputLossAction": enum,
+            "timedMetadataId3Period": integer,
+            "timedMetadataId3Frame": enum
+          },
+          "archiveGroupSettings": {
+            "destination": {
+              "destinationRefId": "string"
+            },
+            "rolloverInterval": integer,
+            "archiveCdnSettings": {
+              "archiveS3Settings": {
+                "logUploads": enum,
+                "cannedAcl": enum
+              }
+            }
+          },
+          "frameCaptureGroupSettings": {
+            "destination": {
+              "destinationRefId": "string"
+            },
+            "frameCaptureCdnSettings": {
+              "frameCaptureS3Settings": {
+                "logUploads": enum,
+                "cannedAcl": enum
+              }
+            }
+          },
+          "mediaPackageGroupSettings": {
+            "destination": {
+              "destinationRefId": "string"
+            }
+          },
+          "multiplexGroupSettings": {
+          }
+        },
+        "name": "string",
+        "outputs": [
+          {
+            "outputSettings": {
+              "hlsOutputSettings": {
+                "nameModifier": "string",
+                "segmentModifier": "string",
+                "hlsSettings": {
+                  "standardHlsSettings": {
+                    "m3u8Settings": {
+                      "audioFramesPerPes": integer,
+                      "audioPids": "string",
+                      "ecmPid": "string",
+                      "nielsenId3Behavior": enum,
+                      "patInterval": integer,
+                      "pcrControl": enum,
+                      "pcrPid": "string",
+                      "pcrPeriod": integer,
+                      "pmtInterval": integer,
+                      "pmtPid": "string",
+                      "programNum": integer,
+                      "scte35Pid": "string",
+                      "scte35Behavior": enum,
+                      "timedMetadataPid": "string",
+                      "timedMetadataBehavior": enum,
+                      "transportStreamId": integer,
+                      "videoPid": "string"
+                    },
+                    "audioRenditionSets": "string"
+                  },
+                  "fmp4HlsSettings": {
+                    "audioRenditionSets": "string",
+                    "timedMetadataBehavior": enum,
+                    "nielsenId3Behavior": enum
+                  },
+                  "audioOnlyHlsSettings": {
+                    "audioOnlyImage": {
+                      "passwordParam": "string",
+                      "uri": "string",
+                      "username": "string"
+                    },
+                    "audioTrackType": enum,
+                    "audioGroupId": "string",
+                    "segmentType": enum
+                  },
+                  "frameCaptureHlsSettings": {
+                  }
+                },
+                "h265PackagingType": enum
+              },
+              "rtmpOutputSettings": {
+                "destination": {
+                  "destinationRefId": "string"
+                },
+                "connectionRetryInterval": integer,
+                "numRetries": integer,
+                "certificateMode": enum
+              },
+              "udpOutputSettings": {
+                "destination": {
+                  "destinationRefId": "string"
+                },
+                "bufferMsec": integer,
+                "fecOutputSettings": {
+                  "includeFec": enum,
+                  "columnDepth": integer,
+                  "rowLength": integer
+                },
+                "containerSettings": {
+                  "m2tsSettings": {
+                    "bitrate": integer,
+                    "ccDescriptor": enum,
+                    "ebif": enum,
+                    "nielsenId3Behavior": enum,
+                    "programNum": integer,
+                    "patInterval": integer,
+                    "pmtInterval": integer,
+                    "pcrControl": enum,
+                    "pcrPeriod": integer,
+                    "timedMetadataBehavior": enum,
+                    "transportStreamId": integer,
+                    "bufferModel": enum,
+                    "rateMode": enum,
+                    "audioBufferModel": enum,
+                    "audioStreamType": enum,
+                    "nullPacketBitrate": number,
+                    "audioFramesPerPes": integer,
+                    "segmentationTime": number,
+                    "segmentationStyle": enum,
+                    "fragmentTime": number,
+                    "segmentationMarkers": enum,
+                    "ebpLookaheadMs": integer,
+                    "ebpPlacement": enum,
+                    "ebpAudioInterval": enum,
+                    "esRateInPes": enum,
+                    "arib": enum,
+                    "aribCaptionsPidControl": enum,
+                    "absentInputAudioBehavior": enum,
+                    "dvbNitSettings": {
+                      "repInterval": integer,
+                      "networkId": integer,
+                      "networkName": "string"
+                    },
+                    "dvbSdtSettings": {
+                      "outputSdt": enum,
+                      "repInterval": integer,
+                      "serviceName": "string",
+                      "serviceProviderName": "string"
+                    },
+                    "dvbTdtSettings": {
+                      "repInterval": integer
+                    },
+                    "pmtPid": "string",
+                    "pcrPid": "string",
+                    "videoPid": "string",
+                    "audioPids": "string",
+                    "dvbTeletextPid": "string",
+                    "dvbSubPids": "string",
+                    "scte27Pids": "string",
+                    "scte35Pid": "string",
+                    "scte35Control": enum,
+                    "klv": enum,
+                    "klvDataPids": "string",
+                    "timedMetadataPid": "string",
+                    "etvPlatformPid": "string",
+                    "etvSignalPid": "string",
+                    "ecmPid": "string",
+                    "aribCaptionsPid": "string"
+                  }
+                }
+              },
+              "msSmoothOutputSettings": {
+                "nameModifier": "string",
+                "h265PackagingType": enum
+              },
+              "archiveOutputSettings": {
+                "nameModifier": "string",
+                "extension": "string",
+                "containerSettings": {
+                  "m2tsSettings": {
+                    "bitrate": integer,
+                    "ccDescriptor": enum,
+                    "ebif": enum,
+                    "nielsenId3Behavior": enum,
+                    "programNum": integer,
+                    "patInterval": integer,
+                    "pmtInterval": integer,
+                    "pcrControl": enum,
+                    "pcrPeriod": integer,
+                    "timedMetadataBehavior": enum,
+                    "transportStreamId": integer,
+                    "bufferModel": enum,
+                    "rateMode": enum,
+                    "audioBufferModel": enum,
+                    "audioStreamType": enum,
+                    "nullPacketBitrate": number,
+                    "audioFramesPerPes": integer,
+                    "segmentationTime": number,
+                    "segmentationStyle": enum,
+                    "fragmentTime": number,
+                    "segmentationMarkers": enum,
+                    "ebpLookaheadMs": integer,
+                    "ebpPlacement": enum,
+                    "ebpAudioInterval": enum,
+                    "esRateInPes": enum,
+                    "arib": enum,
+                    "aribCaptionsPidControl": enum,
+                    "absentInputAudioBehavior": enum,
+                    "dvbNitSettings": {
+                      "repInterval": integer,
+                      "networkId": integer,
+                      "networkName": "string"
+                    },
+                    "dvbSdtSettings": {
+                      "outputSdt": enum,
+                      "repInterval": integer,
+                      "serviceName": "string",
+                      "serviceProviderName": "string"
+                    },
+                    "dvbTdtSettings": {
+                      "repInterval": integer
+                    },
+                    "pmtPid": "string",
+                    "pcrPid": "string",
+                    "videoPid": "string",
+                    "audioPids": "string",
+                    "dvbTeletextPid": "string",
+                    "dvbSubPids": "string",
+                    "scte27Pids": "string",
+                    "scte35Pid": "string",
+                    "scte35Control": enum,
+                    "klv": enum,
+                    "klvDataPids": "string",
+                    "timedMetadataPid": "string",
+                    "etvPlatformPid": "string",
+                    "etvSignalPid": "string",
+                    "ecmPid": "string",
+                    "aribCaptionsPid": "string"
+                  },
+                  "rawSettings": {
+                  }
+                }
+              },
+              "frameCaptureOutputSettings": {
+                "nameModifier": "string"
+              },
+              "mediaPackageOutputSettings": {
+              },
+              "multiplexOutputSettings": {
+                "destination": {
+                  "destinationRefId": "string"
+                }
+              }
+            },
+            "outputName": "string",
+            "videoDescriptionName": "string",
+            "audioDescriptionNames": [
+              "string"
+            ],
+            "captionDescriptionNames": [
+              "string"
+            ]
+          }
+        ]
+      }
+    ],
+    "timecodeConfig": {
+      "source": enum,
+      "syncThreshold": integer
+    },
+    "nielsenConfiguration": {
+      "distributorId": "string",
+      "nielsenPcmToId3Tagging": enum
+    },
+    "videoDescriptions": [
+      {
+        "codecSettings": {
+          "h265Settings": {
+            "parNumerator": integer,
+            "parDenominator": integer,
+            "afdSignaling": enum,
+            "fixedAfd": enum,
+            "colorSpaceSettings": {
+              "colorSpacePassthroughSettings": {
+              },
+              "rec601Settings": {
+              },
+              "rec709Settings": {
+              },
+              "hdr10Settings": {
+                "maxCll": integer,
+                "maxFall": integer
+              }
+            },
+            "rateControlMode": enum,
+            "bitrate": integer,
+            "maxBitrate": integer,
+            "bufSize": integer,
+            "qvbrQualityLevel": integer,
+            "framerateNumerator": integer,
+            "framerateDenominator": integer,
+            "gopSize": number,
+            "gopSizeUnits": enum,
+            "gopClosedCadence": integer,
+            "sceneChangeDetect": enum,
+            "minIInterval": integer,
+            "profile": enum,
+            "tier": enum,
+            "scanType": enum,
+            "level": enum,
+            "slices": integer,
+            "adaptiveQuantization": enum,
+            "filterSettings": {
+              "temporalFilterSettings": {
+                "strength": enum,
+                "postFilterSharpening": enum
+              }
+            },
+            "flickerAq": enum,
+            "colorMetadata": enum,
+            "alternativeTransferFunction": enum,
+            "lookAheadRateControl": enum,
+            "timecodeInsertion": enum
+          },
+          "mpeg2Settings": {
+            "afdSignaling": enum,
+            "fixedAfd": enum,
+            "colorSpace": enum,
+            "colorMetadata": enum,
+            "adaptiveQuantization": enum,
+            "filterSettings": {
+              "temporalFilterSettings": {
+                "strength": enum,
+                "postFilterSharpening": enum
+              }
+            },
+            "framerateNumerator": integer,
+            "framerateDenominator": integer,
+            "gopClosedCadence": integer,
+            "gopNumBFrames": integer,
+            "gopSize": number,
+            "gopSizeUnits": enum,
+            "subgopLength": enum,
+            "scanType": enum,
+            "displayAspectRatio": enum,
+            "timecodeInsertion": enum
+          },
+          "frameCaptureSettings": {
+            "captureInterval": integer,
+            "captureIntervalUnits": enum
+          },
+          "h264Settings": {
+            "afdSignaling": enum,
+            "fixedAfd": enum,
+            "colorSpaceSettings": {
+              "colorSpacePassthroughSettings": {
+              },
+              "rec601Settings": {
+              },
+              "rec709Settings": {
+              }
+            },
+            "colorMetadata": enum,
+            "adaptiveQuantization": enum,
+            "bitrate": integer,
+            "bufSize": integer,
+            "bufFillPct": integer,
+            "entropyEncoding": enum,
+            "filterSettings": {
+              "temporalFilterSettings": {
+                "strength": enum,
+                "postFilterSharpening": enum
+              }
+            },
+            "flickerAq": enum,
+            "forceFieldPictures": enum,
+            "framerateControl": enum,
+            "framerateNumerator": integer,
+            "framerateDenominator": integer,
+            "gopBReference": enum,
+            "gopClosedCadence": integer,
+            "gopNumBFrames": integer,
+            "gopSize": number,
+            "gopSizeUnits": enum,
+            "subgopLength": enum,
+            "scanType": enum,
+            "level": enum,
+            "lookAheadRateControl": enum,
+            "maxBitrate": integer,
+            "minIInterval": integer,
+            "numRefFrames": integer,
+            "parControl": enum,
+            "parNumerator": integer,
+            "parDenominator": integer,
+            "profile": enum,
+            "qualityLevel": enum,
+            "rateControlMode": enum,
+            "qvbrQualityLevel": integer,
+            "syntax": enum,
+            "sceneChangeDetect": enum,
+            "slices": integer,
+            "softness": integer,
+            "spatialAq": enum,
+            "temporalAq": enum,
+            "timecodeInsertion": enum
+          }
+        },
+        "height": integer,
+        "name": "string",
+        "respondToAfd": enum,
+        "sharpness": integer,
+        "scalingBehavior": enum,
+        "width": integer
+      }
+    ]
+  },
+  "roleArn": "string",
+  "reserved": "string",
+  "logLevel": enum,
+  "tags": {
+  },
+  "channelClass": enum,
+  "vpc": {
+    "securityGroupIds": [
+      "string"
+    ],
+    "subnetIds": [
+      "string"
+    ],
+    "publicAddressAllocationIds": [
+      "string"
+    ]
+  },
+  "maintenance": {
+    "maintenanceDay": enum,
+    "maintenanceStartTime": "string"
+  }
+}

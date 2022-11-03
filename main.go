@@ -13,7 +13,7 @@ import (
 func main() {
 	fmt.Println("parsing request schema")
 
-	b, err := os.ReadFile("req.json")
+	b, err := os.ReadFile("testdata/medialive-input-post-schema.json")
 	if err != nil {
 		log.Fatal(err)
 	}
