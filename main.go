@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"go/format"
 	"log"
 	"os"
 	"text/template"
@@ -27,9 +28,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if err := populateTemplate(in); err != nil {
+	out, err := populateTemplate(in)
+	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println(string(out))
 }
 
 const (
@@ -59,18 +62,26 @@ type schemaEntry struct {
 
 var schemaTemplate = `
 {{ define "schemaItem" -}}
-	"{{.KeyName}}": {
-		Type: {{.TypeText}}
-		{{- if eq .Type 5 }}
-		MaxItems: 1,
-		{{- end }}
-	},
+    "{{.KeyName}}": {
+        Type: {{.TypeText}}
+        {{- if eq .Type 5 }}
+        MaxItems: 1,
+        {{- end }}
+    },
 {{- end }}
-    Schema: map[string]*schema.Schema{
-    	{{ range . -}}
-		{{ template "schemaItem" . }}
-    	{{ end }}
+package main
+
+import "github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+
+func ResourceNewThing() *schema.Resource {
+    return &schema.Resource{
+        Schema: map[string]*schema.Schema{
+            {{ range . -}}
+            {{ template "schemaItem" . }}
+            {{ end }}
+        },
     }
+}
 `
 
 func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
@@ -122,7 +133,7 @@ func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
 	return schemaEntry{KeyName: keyName, Type: typeUnknown, TypeText: typeTextUnknown}
 }
 
-func populateTemplate(in map[string]interface{}) error {
+func populateTemplate(in map[string]interface{}) ([]byte, error) {
 	entries := make(map[string]schemaEntry)
 	for k, v := range in {
 		entries[k] = newSchemaEntry(k, v)
@@ -133,10 +144,16 @@ func populateTemplate(in map[string]interface{}) error {
 
 	tmpl, err := template.New("schema").Parse(schemaTemplate)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	return tmpl.Execute(os.Stdout, entries)
+	b := &bytes.Buffer{}
+	if err := tmpl.Execute(b, entries); err != nil {
+		return nil, err
+	}
+
+	// gofmt the output so the template formatting doesn't need to be perfect
+	return format.Source(b.Bytes())
 }
 
 // toValidJSON replaces placeholder documentation values with values that
