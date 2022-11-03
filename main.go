@@ -67,6 +67,13 @@ var schemaTemplate = `
         {{- if eq .Type 5 }}
         MaxItems: 1,
         {{- end }}
+        {{- if .Elems }}
+        Elems: []map[string]*schema.Resource{
+            {{- range .Elems }}
+                {{ template "schemaItem" . }}
+            {{- end }}
+        },
+        {{- end }}
     },
 {{- end }}
 package main
