@@ -1,0 +1,74 @@
+{
+   "capacityProviderStrategy": [
+      {
+         "base": number,
+         "capacityProvider": "string",
+         "weight": number
+      }
+   ],
+   "clientToken": "string",
+   "cluster": "string",
+   "deploymentConfiguration": {
+      "deploymentCircuitBreaker": {
+         "enable": boolean,
+         "rollback": boolean
+      },
+      "maximumPercent": number,
+      "minimumHealthyPercent": number
+   },
+   "deploymentController": {
+      "type": "string"
+   },
+   "desiredCount": number,
+   "enableECSManagedTags": boolean,
+   "enableExecuteCommand": boolean,
+   "healthCheckGracePeriodSeconds": number,
+   "launchType": "string",
+   "loadBalancers": [
+      {
+         "containerName": "string",
+         "containerPort": number,
+         "loadBalancerName": "string",
+         "targetGroupArn": "string"
+      }
+   ],
+   "networkConfiguration": {
+      "awsvpcConfiguration": {
+         "assignPublicIp": "string",
+         "securityGroups": [ "string" ],
+         "subnets": [ "string" ]
+      }
+   },
+   "placementConstraints": [
+      {
+         "expression": "string",
+         "type": "string"
+      }
+   ],
+   "placementStrategy": [
+      {
+         "field": "string",
+         "type": "string"
+      }
+   ],
+   "platformVersion": "string",
+   "propagateTags": "string",
+   "role": "string",
+   "schedulingStrategy": "string",
+   "serviceName": "string",
+   "serviceRegistries": [
+      {
+         "containerName": "string",
+         "containerPort": number,
+         "port": number,
+         "registryArn": "string"
+      }
+   ],
+   "tags": [
+      {
+         "key": "string",
+         "value": "string"
+      }
+   ],
+   "taskDefinition": "string"
+}

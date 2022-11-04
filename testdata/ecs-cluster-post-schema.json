@@ -1,0 +1,36 @@
+{
+   "capacityProviders": [ "string" ],
+   "clusterName": "string",
+   "configuration": {
+      "executeCommandConfiguration": {
+         "kmsKeyId": "string",
+         "logConfiguration": {
+            "cloudWatchEncryptionEnabled": boolean,
+            "cloudWatchLogGroupName": "string",
+            "s3BucketName": "string",
+            "s3EncryptionEnabled": boolean,
+            "s3KeyPrefix": "string"
+         },
+         "logging": "string"
+      }
+   },
+   "defaultCapacityProviderStrategy": [
+      {
+         "base": number,
+         "capacityProvider": "string",
+         "weight": number
+      }
+   ],
+   "settings": [
+      {
+         "name": "string",
+         "value": "string"
+      }
+   ],
+   "tags": [
+      {
+         "key": "string",
+         "value": "string"
+      }
+   ]
+}

@@ -1,0 +1,10 @@
+{
+   "thing": "string",
+   "second": number,
+   "another": boolean,
+   "nested": [
+      {
+         "value": "string"
+      }
+   ]
+}
