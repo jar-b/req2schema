@@ -19,19 +19,9 @@ func main() {
 		log.Fatal(fmt.Errorf("reading input: %w", err))
 	}
 
-	bv, err := toValidJSON(b)
+	out, err := requestToSchema(b)
 	if err != nil {
-		log.Fatal(err)
-	}
-
-	var reqData map[string]interface{}
-	if err = json.Unmarshal(bv, &reqData); err != nil {
-		log.Fatal(err)
-	}
-
-	out, err := execTemplate(reqData)
-	if err != nil {
-		log.Fatal(fmt.Errorf("executing template: %w", err))
+		log.Fatal(fmt.Errorf("schema generation: %w", err))
 	}
 	fmt.Println(string(out))
 }
@@ -99,6 +89,29 @@ func ResourceNewThing() *schema.Resource {
 }
 `
 
+func execTemplate(reqData map[string]interface{}) ([]byte, error) {
+	entries := make(map[string]schemaEntry)
+	for k, v := range reqData {
+		if skipKey(k) {
+			continue
+		}
+		entries[k] = newSchemaEntry(k, v)
+	}
+
+	tmpl, err := template.New("schema").Parse(schemaTemplate)
+	if err != nil {
+		return nil, err
+	}
+
+	b := &bytes.Buffer{}
+	if err := tmpl.Execute(b, entries); err != nil {
+		return nil, err
+	}
+
+	// gofmt the output so the template formatting doesn't need to be perfect
+	return format.Source(b.Bytes())
+}
+
 func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
 	sa := schemaEntry{KeyName: keyName}
 	if mapItem, ok := entry.(map[string]interface{}); ok {
@@ -149,27 +162,22 @@ func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
 	return schemaEntry{KeyName: keyName, Type: typeUnknown, TypeText: typeTextUnknown}
 }
 
-func execTemplate(reqData map[string]interface{}) ([]byte, error) {
-	entries := make(map[string]schemaEntry)
-	for k, v := range reqData {
-		if skipKey(k) {
-			continue
-		}
-		entries[k] = newSchemaEntry(k, v)
-	}
-
-	tmpl, err := template.New("schema").Parse(schemaTemplate)
+func requestToSchema(b []byte) ([]byte, error) {
+	bv, err := toValidJSON(b)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("cleaning request: %w", err)
 	}
 
-	b := &bytes.Buffer{}
-	if err := tmpl.Execute(b, entries); err != nil {
-		return nil, err
+	var reqData map[string]interface{}
+	if err = json.Unmarshal(bv, &reqData); err != nil {
+		return nil, fmt.Errorf("unmarshaling request: %w", err)
 	}
 
-	// gofmt the output so the template formatting doesn't need to be perfect
-	return format.Source(b.Bytes())
+	out, err := execTemplate(reqData)
+	if err != nil {
+		return nil, fmt.Errorf("executing template: %w", err)
+	}
+	return out, nil
 }
 
 func skipKey(k string) bool {
