@@ -9,7 +9,8 @@ import (
 )
 
 const (
-	typeEnum = iota
+	typeBool = iota
+	typeEnum
 	typeFloat
 	typeInt
 	typeListOfMaps
@@ -18,6 +19,7 @@ const (
 	typeString
 	typeUnknown
 
+	typeTextBool       = "schema.TypeBool,"
 	typeTextEnum       = "schema.TypeString, // TODO: enum, add validation"
 	typeTextFloat      = "schema.TypeFloat,"
 	typeTextInt        = "schema.TypeInt,"
@@ -39,7 +41,7 @@ var schemaTemplate = `
 {{ define "schemaItem" -}}
     "{{.KeyName}}": {
         Type: {{.TypeText}}
-        {{- if eq .Type 5 }}
+        {{- if eq .Type 6 }}
         MaxItems: 1,
         {{- end }}
         {{- if .Elems }}
@@ -51,7 +53,7 @@ var schemaTemplate = `
 			},
         },
         {{- end }}
-        {{- if eq .Type 4 }}
+        {{- if eq .Type 5 }}
         Elems: &schema.Schema{Type: schema.TypeString},
         {{- end }}
     },
@@ -138,6 +140,11 @@ func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
 			sa.TypeText = typeTextEnum
 			return sa
 		}
+		if v == "boolean" {
+			sa.Type = typeBool
+			sa.TypeText = typeTextBool
+			return sa
+		}
 	}
 	if _, ok := entry.(int); ok {
 		sa.Type = typeInt
@@ -190,5 +197,6 @@ func toValidJSON(b []byte) ([]byte, error) {
 	bv := bytes.ReplaceAll(b, []byte("integer"), []byte("0"))
 	bv = bytes.ReplaceAll(bv, []byte("enum"), []byte(`"enum"`))
 	bv = bytes.ReplaceAll(bv, []byte("number"), []byte("0.0"))
+	bv = bytes.ReplaceAll(bv, []byte("boolean"), []byte(`"boolean"`))
 	return bv, nil
 }
