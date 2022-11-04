@@ -81,7 +81,10 @@ var schemaTemplate = `
 {{- end }}
 package main
 
-import "github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+import (
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
+	tftags "github.com/hashicorp/terraform-provider-aws/internal/tags"
+)
 
 func ResourceNewThing() *schema.Resource {
     return &schema.Resource{
@@ -89,6 +92,8 @@ func ResourceNewThing() *schema.Resource {
             {{ range . -}}
             {{ template "schemaItem" . }}
             {{ end -}}
+			"tags":     tftags.TagsSchema(),
+			"tags_all": tftags.TagsSchemaComputed(),
         },
     }
 }
@@ -147,6 +152,9 @@ func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
 func execTemplate(reqData map[string]interface{}) ([]byte, error) {
 	entries := make(map[string]schemaEntry)
 	for k, v := range reqData {
+		if skipKey(k) {
+			continue
+		}
 		entries[k] = newSchemaEntry(k, v)
 	}
 
@@ -162,6 +170,20 @@ func execTemplate(reqData map[string]interface{}) ([]byte, error) {
 
 	// gofmt the output so the template formatting doesn't need to be perfect
 	return format.Source(b.Bytes())
+}
+
+func skipKey(k string) bool {
+	// keysToSkip is a list of keys to skip adding to the terraform schema
+	//
+	// requestId - this is specific to AWS HTTP requests and has no context in terraform
+	// tags - the "tags" and "tags_all" attibutes are accounted for in the base template
+	keysToSkip := []string{"requestId", "tags"}
+	for _, sk := range keysToSkip {
+		if k == sk {
+			return true
+		}
+	}
+	return false
 }
 
 // toValidJSON replaces placeholder documentation values with values that
