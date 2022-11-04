@@ -16,7 +16,7 @@ func main() {
 	}
 	b, err := os.ReadFile(os.Args[1])
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal(fmt.Errorf("reading input: %w", err))
 	}
 
 	bv, err := toValidJSON(b)
@@ -31,7 +31,7 @@ func main() {
 
 	out, err := execTemplate(reqData)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal(fmt.Errorf("executing template: %w", err))
 	}
 	fmt.Println(string(out))
 }
@@ -69,10 +69,12 @@ var schemaTemplate = `
         MaxItems: 1,
         {{- end }}
         {{- if .Elems }}
-        Elems: []map[string]*schema.Resource{
+        Elems: &schema.Resource{
+			Schema: map[string]*schema.Schema{
             {{- range .Elems }}
                 {{ template "schemaItem" . }}
             {{- end }}
+			},
         },
         {{- end }}
     },
@@ -86,7 +88,7 @@ func ResourceNewThing() *schema.Resource {
         Schema: map[string]*schema.Schema{
             {{ range . -}}
             {{ template "schemaItem" . }}
-            {{ end }}
+            {{ end -}}
         },
     }
 }
