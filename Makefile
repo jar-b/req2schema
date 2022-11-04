@@ -6,7 +6,7 @@ build: clean ## Build binaries
 
 .PHONY: clean
 clean: ## Clean up binaries
-	@rm -f req2schema
+	@rm -f req2schema coverage.txt
 
 .PHONY: cover
 cover: test ## Display test coverage report
