@@ -27,21 +27,23 @@ func main() {
 }
 
 const (
-	typeString = iota
-	typeEnum
-	typeInt
+	typeEnum = iota
 	typeFloat
-	typeList
+	typeInt
+	typeListOfMaps
+	typeListOfType
 	typeMap
+	typeString
 	typeUnknown
 
-	typeTextString  = "schema.TypeString,"
-	typeTextEnum    = "schema.TypeString, // TODO: enum, add validation"
-	typeTextInt     = "schema.TypeInt,"
-	typeTextFloat   = "schema.TypeFloat,"
-	typeTextList    = "schema.TypeList,"
-	typeTextMap     = "schema.TypeList,"
-	typeTextUnknown = "schema.TypeString, // TODO: unable to identify type"
+	typeTextEnum       = "schema.TypeString, // TODO: enum, add validation"
+	typeTextFloat      = "schema.TypeFloat,"
+	typeTextInt        = "schema.TypeInt,"
+	typeTextListOfMaps = "schema.TypeList,"
+	typeTextListOfType = "schema.TypeList,"
+	typeTextMap        = "schema.TypeList,"
+	typeTextString     = "schema.TypeString,"
+	typeTextUnknown    = "schema.TypeString, // TODO: unable to identify type"
 )
 
 type schemaEntry struct {
@@ -67,16 +69,19 @@ var schemaTemplate = `
 			},
         },
         {{- end }}
+        {{- if eq .Type 4 }}
+        Elems: &schema.Schema{Type: schema.TypeString},
+        {{- end }}
     },
 {{- end }}
-package main
+package someservice
 
 import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	tftags "github.com/hashicorp/terraform-provider-aws/internal/tags"
 )
 
-func ResourceNewThing() *schema.Resource {
+func ResourceSomeThing() *schema.Resource {
     return &schema.Resource{
         Schema: map[string]*schema.Schema{
             {{ range . -}}
@@ -125,16 +130,19 @@ func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
 		return sa
 	}
 	if listItem, ok := entry.([]interface{}); ok {
-		elems := make(map[string]schemaEntry)
-		// TODO: handle non-object (ex. array of strings) items with another assertion
 		if mapItem, ok := listItem[0].(map[string]interface{}); ok {
+			elems := make(map[string]schemaEntry)
 			for k, v := range mapItem {
 				elems[k] = newSchemaEntry(k, v)
 			}
+			sa.Type = typeListOfMaps
+			sa.TypeText = typeTextListOfMaps
+			sa.Elems = elems
+		} else {
+			// TODO: more granular handling of assertions on lists of concrete types (string, int, more?)
+			sa.Type = typeListOfType
+			sa.TypeText = typeTextListOfType
 		}
-		sa.Type = typeList
-		sa.TypeText = typeTextList
-		sa.Elems = elems
 		return sa
 	}
 	if v, ok := entry.(string); ok {
