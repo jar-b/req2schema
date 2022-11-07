@@ -27,6 +27,8 @@ func Test_requestToSchema(t *testing.T) {
 		want    []byte
 		wantErr bool
 	}{
+		{"empty input", nil, nil, true},
+		{"invalid input", []byte("{"), nil, true},
 		{"simple", simpleReq, simpleGo, false},
 		{"batch job queue", batchJobQueueReq, batchJobQueueGo, false},
 		{"ecs cluster", ecsClusterReq, ecsClusterGo, false},
