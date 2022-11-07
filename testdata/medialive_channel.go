@@ -215,7 +215,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"dialnorm": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"drc_profile": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -250,7 +250,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"dialnorm": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"drc_line": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -361,25 +361,25 @@ func ResourceSomeThing() *schema.Resource {
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
 																		"gain": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																		"input_channel": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
 															},
 															"output_channel": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 														},
 													},
 												},
 												"channels_in": {
-													Type: schema.TypeFloat,
+													Type: schema.TypeInt,
 												},
 												"channels_out": {
-													Type: schema.TypeFloat,
+													Type: schema.TypeInt,
 												},
 											},
 										},
@@ -434,7 +434,7 @@ func ResourceSomeThing() *schema.Resource {
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
 															"ad_avail_offset": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"no_regional_blackout_flag": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -451,7 +451,7 @@ func ResourceSomeThing() *schema.Resource {
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
 															"ad_avail_offset": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"no_regional_blackout_flag": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -547,7 +547,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"background_opacity": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"font": {
 																Type:     schema.TypeList,
@@ -570,10 +570,10 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"font_opacity": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"font_resolution": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"font_size": {
 																Type: schema.TypeString,
@@ -582,28 +582,28 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"outline_size": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"shadow_color": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"shadow_opacity": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"shadow_x_offset": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"shadow_y_offset": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"teletext_grid_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"x_position": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"y_position": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 														},
 													},
@@ -620,7 +620,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"background_opacity": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"font": {
 																Type:     schema.TypeList,
@@ -643,10 +643,10 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"font_opacity": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"font_resolution": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"font_size": {
 																Type: schema.TypeString,
@@ -655,28 +655,28 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"outline_size": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"shadow_color": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"shadow_opacity": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"shadow_x_offset": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"shadow_y_offset": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"teletext_grid_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"x_position": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"y_position": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 														},
 													},
@@ -783,7 +783,7 @@ func ResourceSomeThing() *schema.Resource {
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
 									"initial_audio_gain": {
-										Type: schema.TypeFloat,
+										Type: schema.TypeInt,
 									},
 									"input_end_action": {
 										Type: schema.TypeString, // TODO: enum, add validation
@@ -794,7 +794,7 @@ func ResourceSomeThing() *schema.Resource {
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
 												"black_frame_msec": {
-													Type: schema.TypeFloat,
+													Type: schema.TypeInt,
 												},
 												"input_loss_image_color": {
 													Type: schema.TypeString,
@@ -820,7 +820,7 @@ func ResourceSomeThing() *schema.Resource {
 													Type: schema.TypeString, // TODO: enum, add validation
 												},
 												"repeat_frame_msec": {
-													Type: schema.TypeFloat,
+													Type: schema.TypeInt,
 												},
 											},
 										},
@@ -925,7 +925,7 @@ func ResourceSomeThing() *schema.Resource {
 																},
 															},
 															"rollover_interval": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 														},
 													},
@@ -997,7 +997,7 @@ func ResourceSomeThing() *schema.Resource {
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
 																		"caption_channel": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																		"language_code": {
 																			Type: schema.TypeString,
@@ -1051,19 +1051,19 @@ func ResourceSomeThing() *schema.Resource {
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
 																					"connection_retry_interval": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"filecache_duration": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"http_transfer_mode": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
 																					"num_retries": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"restart_delay": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"salt": {
 																						Type: schema.TypeString,
@@ -1080,16 +1080,16 @@ func ResourceSomeThing() *schema.Resource {
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
 																					"connection_retry_interval": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"filecache_duration": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"num_retries": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"restart_delay": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																				},
 																			},
@@ -1100,19 +1100,19 @@ func ResourceSomeThing() *schema.Resource {
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
 																					"connection_retry_interval": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"filecache_duration": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"media_store_storage_class": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
 																					"num_retries": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"restart_delay": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																				},
 																			},
@@ -1137,19 +1137,19 @@ func ResourceSomeThing() *schema.Resource {
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
 																					"connection_retry_interval": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"filecache_duration": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"http_transfer_mode": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
 																					"num_retries": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"restart_delay": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																				},
 																			},
@@ -1167,7 +1167,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"index_n_segments": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"input_loss_action": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -1179,7 +1179,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"keep_segments": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"key_format": {
 																Type: schema.TypeString,
@@ -1230,7 +1230,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"min_segment_length": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -1245,19 +1245,19 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"program_date_time_period": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"redundant_manifest": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"segment_length": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"segmentation_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"segments_per_subdirectory": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"stream_inf_resolution": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -1266,10 +1266,10 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"timed_metadata_id3_period": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"timestamp_delta_milliseconds": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"ts_file_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -1311,7 +1311,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"connection_retry_interval": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"destination": {
 																Type:     schema.TypeList,
@@ -1334,25 +1334,25 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"filecache_duration": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"fragment_length": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"input_loss_action": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"num_retries": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"restart_delay": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"segmentation_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"send_delay_ms": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"sparse_track_type": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -1389,7 +1389,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"cache_length": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"caption_data": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -1398,7 +1398,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"restart_delay": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 														},
 													},
@@ -1415,7 +1415,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"timed_metadata_id3_period": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 														},
 													},
@@ -1474,7 +1474,7 @@ func ResourceSomeThing() *schema.Resource {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																								"audio_frames_per_pes": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"audio_pids": {
 																									Type: schema.TypeString,
@@ -1483,7 +1483,7 @@ func ResourceSomeThing() *schema.Resource {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																								"bitrate": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"buffer_model": {
 																									Type: schema.TypeString, // TODO: enum, add validation
@@ -1497,13 +1497,13 @@ func ResourceSomeThing() *schema.Resource {
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
 																											"network_id": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																											"network_name": {
 																												Type: schema.TypeString,
 																											},
 																											"rep_interval": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																										},
 																									},
@@ -1517,7 +1517,7 @@ func ResourceSomeThing() *schema.Resource {
 																												Type: schema.TypeString, // TODO: enum, add validation
 																											},
 																											"rep_interval": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																											"service_name": {
 																												Type: schema.TypeString,
@@ -1537,7 +1537,7 @@ func ResourceSomeThing() *schema.Resource {
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
 																											"rep_interval": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																										},
 																									},
@@ -1552,7 +1552,7 @@ func ResourceSomeThing() *schema.Resource {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																								"ebp_lookahead_ms": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"ebp_placement": {
 																									Type: schema.TypeString, // TODO: enum, add validation
@@ -1585,25 +1585,25 @@ func ResourceSomeThing() *schema.Resource {
 																									Type: schema.TypeFloat,
 																								},
 																								"pat_interval": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"pcr_control": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																								"pcr_period": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"pcr_pid": {
 																									Type: schema.TypeString,
 																								},
 																								"pmt_interval": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"pmt_pid": {
 																									Type: schema.TypeString,
 																								},
 																								"program_num": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"rate_mode": {
 																									Type: schema.TypeString, // TODO: enum, add validation
@@ -1633,7 +1633,7 @@ func ResourceSomeThing() *schema.Resource {
 																									Type: schema.TypeString,
 																								},
 																								"transport_stream_id": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"video_pid": {
 																									Type: schema.TypeString,
@@ -1750,7 +1750,7 @@ func ResourceSomeThing() *schema.Resource {
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
 																											"audio_frames_per_pes": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																											"audio_pids": {
 																												Type: schema.TypeString,
@@ -1762,25 +1762,25 @@ func ResourceSomeThing() *schema.Resource {
 																												Type: schema.TypeString, // TODO: enum, add validation
 																											},
 																											"pat_interval": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																											"pcr_control": {
 																												Type: schema.TypeString, // TODO: enum, add validation
 																											},
 																											"pcr_period": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																											"pcr_pid": {
 																												Type: schema.TypeString,
 																											},
 																											"pmt_interval": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																											"pmt_pid": {
 																												Type: schema.TypeString,
 																											},
 																											"program_num": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																											"scte35_behavior": {
 																												Type: schema.TypeString, // TODO: enum, add validation
@@ -1795,7 +1795,7 @@ func ResourceSomeThing() *schema.Resource {
 																												Type: schema.TypeString,
 																											},
 																											"transport_stream_id": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																											"video_pid": {
 																												Type: schema.TypeString,
@@ -1864,7 +1864,7 @@ func ResourceSomeThing() *schema.Resource {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
 																		"connection_retry_interval": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																		"destination": {
 																			Type:     schema.TypeList,
@@ -1878,7 +1878,7 @@ func ResourceSomeThing() *schema.Resource {
 																			},
 																		},
 																		"num_retries": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
@@ -1889,7 +1889,7 @@ func ResourceSomeThing() *schema.Resource {
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
 																		"buffer_msec": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																		"container_settings": {
 																			Type:     schema.TypeList,
@@ -1917,7 +1917,7 @@ func ResourceSomeThing() *schema.Resource {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																								"audio_frames_per_pes": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"audio_pids": {
 																									Type: schema.TypeString,
@@ -1926,7 +1926,7 @@ func ResourceSomeThing() *schema.Resource {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																								"bitrate": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"buffer_model": {
 																									Type: schema.TypeString, // TODO: enum, add validation
@@ -1940,13 +1940,13 @@ func ResourceSomeThing() *schema.Resource {
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
 																											"network_id": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																											"network_name": {
 																												Type: schema.TypeString,
 																											},
 																											"rep_interval": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																										},
 																									},
@@ -1960,7 +1960,7 @@ func ResourceSomeThing() *schema.Resource {
 																												Type: schema.TypeString, // TODO: enum, add validation
 																											},
 																											"rep_interval": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																											"service_name": {
 																												Type: schema.TypeString,
@@ -1980,7 +1980,7 @@ func ResourceSomeThing() *schema.Resource {
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
 																											"rep_interval": {
-																												Type: schema.TypeFloat,
+																												Type: schema.TypeInt,
 																											},
 																										},
 																									},
@@ -1995,7 +1995,7 @@ func ResourceSomeThing() *schema.Resource {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																								"ebp_lookahead_ms": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"ebp_placement": {
 																									Type: schema.TypeString, // TODO: enum, add validation
@@ -2028,25 +2028,25 @@ func ResourceSomeThing() *schema.Resource {
 																									Type: schema.TypeFloat,
 																								},
 																								"pat_interval": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"pcr_control": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																								"pcr_period": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"pcr_pid": {
 																									Type: schema.TypeString,
 																								},
 																								"pmt_interval": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"pmt_pid": {
 																									Type: schema.TypeString,
 																								},
 																								"program_num": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"rate_mode": {
 																									Type: schema.TypeString, // TODO: enum, add validation
@@ -2076,7 +2076,7 @@ func ResourceSomeThing() *schema.Resource {
 																									Type: schema.TypeString,
 																								},
 																								"transport_stream_id": {
-																									Type: schema.TypeFloat,
+																									Type: schema.TypeInt,
 																								},
 																								"video_pid": {
 																									Type: schema.TypeString,
@@ -2104,13 +2104,13 @@ func ResourceSomeThing() *schema.Resource {
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
 																					"column_depth": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"include_fec": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
 																					"row_length": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																				},
 																			},
@@ -2139,7 +2139,7 @@ func ResourceSomeThing() *schema.Resource {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
 									"sync_threshold": {
-										Type: schema.TypeFloat,
+										Type: schema.TypeInt,
 									},
 								},
 							},
@@ -2159,7 +2159,7 @@ func ResourceSomeThing() *schema.Resource {
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
 															"capture_interval": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"capture_interval_units": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -2179,13 +2179,13 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"bitrate": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"buf_fill_pct": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"buf_size": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"color_metadata": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -2248,19 +2248,19 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"framerate_denominator": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"framerate_numerator": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"gop_b_reference": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"gop_closed_cadence": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"gop_num_b_frames": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"gop_size": {
 																Type: schema.TypeFloat,
@@ -2275,22 +2275,22 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"max_bitrate": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"min_i_interval": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"num_ref_frames": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"par_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"par_denominator": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"par_numerator": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"profile": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -2299,7 +2299,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"qvbr_quality_level": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"rate_control_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -2311,10 +2311,10 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"slices": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"softness": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"spatial_aq": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -2349,10 +2349,10 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"bitrate": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"buf_size": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"color_metadata": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -2372,10 +2372,10 @@ func ResourceSomeThing() *schema.Resource {
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
 																					"max_cll": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																					"max_fall": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																				},
 																			},
@@ -2420,13 +2420,13 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"framerate_denominator": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"framerate_numerator": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"gop_closed_cadence": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"gop_size": {
 																Type: schema.TypeFloat,
@@ -2441,22 +2441,22 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"max_bitrate": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"min_i_interval": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"par_denominator": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"par_numerator": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"profile": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"qvbr_quality_level": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"rate_control_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -2468,7 +2468,7 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"slices": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"tier": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -2525,16 +2525,16 @@ func ResourceSomeThing() *schema.Resource {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"framerate_denominator": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"framerate_numerator": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"gop_closed_cadence": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"gop_num_b_frames": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"gop_size": {
 																Type: schema.TypeFloat,
@@ -2558,7 +2558,7 @@ func ResourceSomeThing() *schema.Resource {
 										},
 									},
 									"height": {
-										Type: schema.TypeFloat,
+										Type: schema.TypeInt,
 									},
 									"name": {
 										Type: schema.TypeString,
@@ -2570,10 +2570,10 @@ func ResourceSomeThing() *schema.Resource {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
 									"sharpness": {
-										Type: schema.TypeFloat,
+										Type: schema.TypeInt,
 									},
 									"width": {
-										Type: schema.TypeFloat,
+										Type: schema.TypeInt,
 									},
 								},
 							},
@@ -2591,7 +2591,7 @@ func ResourceSomeThing() *schema.Resource {
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
 									"error_clear_time_msec": {
-										Type: schema.TypeFloat,
+										Type: schema.TypeInt,
 									},
 									"failover_conditions": {
 										Type: schema.TypeList,
@@ -2611,7 +2611,7 @@ func ResourceSomeThing() *schema.Resource {
 																			Type: schema.TypeString,
 																		},
 																		"audio_silence_threshold_msec": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
@@ -2622,7 +2622,7 @@ func ResourceSomeThing() *schema.Resource {
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
 																		"input_loss_threshold_msec": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
@@ -2636,7 +2636,7 @@ func ResourceSomeThing() *schema.Resource {
 																			Type: schema.TypeFloat,
 																		},
 																		"video_black_threshold_msec": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
@@ -2713,7 +2713,7 @@ func ResourceSomeThing() *schema.Resource {
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
 																		"pid": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
@@ -2728,7 +2728,7 @@ func ResourceSomeThing() *schema.Resource {
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
 																					"track": {
-																						Type: schema.TypeFloat,
+																						Type: schema.TypeInt,
 																					},
 																				},
 																			},
@@ -2763,7 +2763,7 @@ func ResourceSomeThing() *schema.Resource {
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
 																		"source_ancillary_channel_number": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
@@ -2781,7 +2781,7 @@ func ResourceSomeThing() *schema.Resource {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
 																		"pid": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
@@ -2798,10 +2798,10 @@ func ResourceSomeThing() *schema.Resource {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
 																		"source608_channel_number": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																		"source608_track_number": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
@@ -2815,7 +2815,7 @@ func ResourceSomeThing() *schema.Resource {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
 																		"source608_channel_number": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
@@ -2829,7 +2829,7 @@ func ResourceSomeThing() *schema.Resource {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
 																		"pid": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
@@ -2878,7 +2878,7 @@ func ResourceSomeThing() *schema.Resource {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
 									"filter_strength": {
-										Type: schema.TypeFloat,
+										Type: schema.TypeInt,
 									},
 									"input_filter": {
 										Type: schema.TypeString, // TODO: enum, add validation
@@ -2894,16 +2894,16 @@ func ResourceSomeThing() *schema.Resource {
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
 															"bandwidth": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"buffer_segments": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"retries": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"retry_interval": {
-																Type: schema.TypeFloat,
+																Type: schema.TypeInt,
 															},
 															"scte35_source": {
 																Type: schema.TypeString, // TODO: enum, add validation
@@ -2942,10 +2942,10 @@ func ResourceSomeThing() *schema.Resource {
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
 																		"max_cll": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																		"max_fall": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
@@ -2967,7 +2967,7 @@ func ResourceSomeThing() *schema.Resource {
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
 																		"pid": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},
@@ -2978,7 +2978,7 @@ func ResourceSomeThing() *schema.Resource {
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
 																		"program_id": {
-																			Type: schema.TypeFloat,
+																			Type: schema.TypeInt,
 																		},
 																	},
 																},

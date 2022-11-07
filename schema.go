@@ -155,11 +155,11 @@ func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
 			sa.TypeText = typeTextBool
 			return sa
 		}
-	}
-	if _, ok := entry.(int); ok {
-		sa.Type = typeInt
-		sa.TypeText = typeTextInt
-		return sa
+		if v == "integer" {
+			sa.Type = typeInt
+			sa.TypeText = typeTextInt
+			return sa
+		}
 	}
 	if _, ok := entry.(float64); ok {
 		sa.Type = typeFloat
@@ -211,7 +211,11 @@ func toSnakeCase(s string) string {
 // toValidJSON replaces placeholder documentation values with values that
 // are valid JSON to allow for the request to be unmarshaled
 func toValidJSON(b []byte) ([]byte, error) {
-	bv := bytes.ReplaceAll(b, []byte("integer"), []byte("0"))
+	// When json.Unmarshal is provided only an interface{}, it will assume float64
+	// for numerical values. Since the target structure can't be known beforehand,
+	// this is converted to a literal string to make the assertion in newSchemaEntry
+	// easier.
+	bv := bytes.ReplaceAll(b, []byte("integer"), []byte(`"integer"`))
 	bv = bytes.ReplaceAll(bv, []byte("enum"), []byte(`"enum"`))
 	bv = bytes.ReplaceAll(bv, []byte("number"), []byte("0.0"))
 	bv = bytes.ReplaceAll(bv, []byte("boolean"), []byte(`"boolean"`))

@@ -18,16 +18,16 @@ func ResourceSomeThing() *schema.Resource {
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
 						"maximum_video_buffer_delay_milliseconds": {
-							Type: schema.TypeFloat,
+							Type: schema.TypeInt,
 						},
 						"transport_stream_bitrate": {
-							Type: schema.TypeFloat,
+							Type: schema.TypeInt,
 						},
 						"transport_stream_id": {
-							Type: schema.TypeFloat,
+							Type: schema.TypeInt,
 						},
 						"transport_stream_reserved_bitrate": {
-							Type: schema.TypeFloat,
+							Type: schema.TypeInt,
 						},
 					},
 				},
