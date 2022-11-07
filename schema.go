@@ -170,14 +170,9 @@ func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
 }
 
 func requestToSchema(b []byte) ([]byte, error) {
-	bv, err := toValidJSON(b)
+	reqData, err := toValidJSON(b)
 	if err != nil {
-		return nil, fmt.Errorf("cleaning request: %w", err)
-	}
-
-	var reqData map[string]interface{}
-	if err = json.Unmarshal(bv, &reqData); err != nil {
-		return nil, fmt.Errorf("unmarshaling request: %w", err)
+		return nil, fmt.Errorf("converting request: %w", err)
 	}
 
 	out, err := execTemplate(reqData)
@@ -208,9 +203,9 @@ func toSnakeCase(s string) string {
 	return strings.ToLower(snake)
 }
 
-// toValidJSON replaces placeholder documentation values with values that
-// are valid JSON to allow for the request to be unmarshaled
-func toValidJSON(b []byte) ([]byte, error) {
+// toValidJSON replaces placeholder documentation values with valid JSON and
+// attempts to unmarshal it
+func toValidJSON(b []byte) (map[string]interface{}, error) {
 	// When json.Unmarshal is provided only an interface{}, it will assume float64
 	// for numerical values. Since the target structure can't be known beforehand,
 	// this is converted to a literal string to make the assertion in newSchemaEntry
@@ -219,5 +214,10 @@ func toValidJSON(b []byte) ([]byte, error) {
 	bv = bytes.ReplaceAll(bv, []byte("enum"), []byte(`"enum"`))
 	bv = bytes.ReplaceAll(bv, []byte("number"), []byte("0.0"))
 	bv = bytes.ReplaceAll(bv, []byte("boolean"), []byte(`"boolean"`))
-	return bv, nil
+
+	var reqData map[string]interface{}
+	if err := json.Unmarshal(bv, &reqData); err != nil {
+		return nil, err
+	}
+	return reqData, nil
 }
