@@ -8,7 +8,7 @@ import (
 func ResourceSomeThing() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
-			"cdiInputSpecification": {
+			"cdi_input_specification": {
 				Type:     schema.TypeList,
 				MaxItems: 1,
 				Elems: &schema.Resource{
@@ -19,7 +19,7 @@ func ResourceSomeThing() *schema.Resource {
 					},
 				},
 			},
-			"channelClass": {
+			"channel_class": {
 				Type: schema.TypeString, // TODO: enum, add validation
 			},
 			"destinations": {
@@ -29,25 +29,25 @@ func ResourceSomeThing() *schema.Resource {
 						"id": {
 							Type: schema.TypeString,
 						},
-						"mediaPackageSettings": {
+						"media_package_settings": {
 							Type: schema.TypeList,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"channelId": {
+									"channel_id": {
 										Type: schema.TypeString,
 									},
 								},
 							},
 						},
-						"multiplexSettings": {
+						"multiplex_settings": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"multiplexId": {
+									"multiplex_id": {
 										Type: schema.TypeString,
 									},
-									"programName": {
+									"program_name": {
 										Type: schema.TypeString,
 									},
 								},
@@ -57,10 +57,10 @@ func ResourceSomeThing() *schema.Resource {
 							Type: schema.TypeList,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"passwordParam": {
+									"password_param": {
 										Type: schema.TypeString,
 									},
-									"streamName": {
+									"stream_name": {
 										Type: schema.TypeString,
 									},
 									"url": {
@@ -75,16 +75,16 @@ func ResourceSomeThing() *schema.Resource {
 					},
 				},
 			},
-			"encoderSettings": {
+			"encoder_settings": {
 				Type:     schema.TypeList,
 				MaxItems: 1,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"audioDescriptions": {
+						"audio_descriptions": {
 							Type: schema.TypeList,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"audioNormalizationSettings": {
+									"audio_normalization_settings": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
@@ -92,43 +92,43 @@ func ResourceSomeThing() *schema.Resource {
 												"algorithm": {
 													Type: schema.TypeString, // TODO: enum, add validation
 												},
-												"algorithmControl": {
+												"algorithm_control": {
 													Type: schema.TypeString, // TODO: enum, add validation
 												},
-												"targetLkfs": {
+												"target_lkfs": {
 													Type: schema.TypeFloat,
 												},
 											},
 										},
 									},
-									"audioSelectorName": {
+									"audio_selector_name": {
 										Type: schema.TypeString,
 									},
-									"audioType": {
+									"audio_type": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"audioTypeControl": {
+									"audio_type_control": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"audioWatermarkingSettings": {
+									"audio_watermarking_settings": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"nielsenWatermarksSettings": {
+												"nielsen_watermarks_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"nielsenCbetSettings": {
+															"nielsen_cbet_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"cbetCheckDigitString": {
+																		"cbet_check_digit_string": {
 																			Type: schema.TypeString,
 																		},
-																		"cbetStepaside": {
+																		"cbet_stepaside": {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
 																		"csid": {
@@ -137,15 +137,15 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"nielsenDistributionType": {
+															"nielsen_distribution_type": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"nielsenNaesIiNwSettings": {
+															"nielsen_naes_ii_nw_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"checkDigitString": {
+																		"check_digit_string": {
 																			Type: schema.TypeString,
 																		},
 																		"sid": {
@@ -160,12 +160,12 @@ func ResourceSomeThing() *schema.Resource {
 											},
 										},
 									},
-									"codecSettings": {
+									"codec_settings": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"aacSettings": {
+												"aac_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
@@ -173,34 +173,34 @@ func ResourceSomeThing() *schema.Resource {
 															"bitrate": {
 																Type: schema.TypeFloat,
 															},
-															"codingMode": {
+															"coding_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"inputType": {
+															"input_type": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"profile": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"rateControlMode": {
+															"rate_control_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"rawFormat": {
+															"raw_format": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"sampleRate": {
+															"sample_rate": {
 																Type: schema.TypeFloat,
 															},
 															"spec": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"vbrQuality": {
+															"vbr_quality": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
 													},
 												},
-												"ac3Settings": {
+												"ac3_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
@@ -208,96 +208,96 @@ func ResourceSomeThing() *schema.Resource {
 															"bitrate": {
 																Type: schema.TypeFloat,
 															},
-															"bitstreamMode": {
+															"bitstream_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"codingMode": {
+															"coding_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"dialnorm": {
 																Type: schema.TypeFloat,
 															},
-															"drcProfile": {
+															"drc_profile": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"lfeFilter": {
+															"lfe_filter": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"metadataControl": {
+															"metadata_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
 													},
 												},
-												"eac3Settings": {
+												"eac3_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"attenuationControl": {
+															"attenuation_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"bitrate": {
 																Type: schema.TypeFloat,
 															},
-															"bitstreamMode": {
+															"bitstream_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"codingMode": {
+															"coding_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"dcFilter": {
+															"dc_filter": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"dialnorm": {
 																Type: schema.TypeFloat,
 															},
-															"drcLine": {
+															"drc_line": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"drcRf": {
+															"drc_rf": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"lfeControl": {
+															"lfe_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"lfeFilter": {
+															"lfe_filter": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"loRoCenterMixLevel": {
+															"lo_ro_center_mix_level": {
 																Type: schema.TypeFloat,
 															},
-															"loRoSurroundMixLevel": {
+															"lo_ro_surround_mix_level": {
 																Type: schema.TypeFloat,
 															},
-															"ltRtCenterMixLevel": {
+															"lt_rt_center_mix_level": {
 																Type: schema.TypeFloat,
 															},
-															"ltRtSurroundMixLevel": {
+															"lt_rt_surround_mix_level": {
 																Type: schema.TypeFloat,
 															},
-															"metadataControl": {
+															"metadata_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"passthroughControl": {
+															"passthrough_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"phaseControl": {
+															"phase_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"stereoDownmix": {
+															"stereo_downmix": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"surroundExMode": {
+															"surround_ex_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"surroundMode": {
+															"surround_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
 													},
 												},
-												"mp2Settings": {
+												"mp2_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
@@ -305,31 +305,31 @@ func ResourceSomeThing() *schema.Resource {
 															"bitrate": {
 																Type: schema.TypeFloat,
 															},
-															"codingMode": {
+															"coding_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"sampleRate": {
+															"sample_rate": {
 																Type: schema.TypeFloat,
 															},
 														},
 													},
 												},
-												"passThroughSettings": {
+												"pass_through_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 												},
-												"wavSettings": {
+												"wav_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"bitDepth": {
+															"bit_depth": {
 																Type: schema.TypeFloat,
 															},
-															"codingMode": {
+															"coding_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"sampleRate": {
+															"sample_rate": {
 																Type: schema.TypeFloat,
 															},
 														},
@@ -338,69 +338,69 @@ func ResourceSomeThing() *schema.Resource {
 											},
 										},
 									},
-									"languageCode": {
+									"language_code": {
 										Type: schema.TypeString,
 									},
-									"languageCodeControl": {
+									"language_code_control": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
 									"name": {
 										Type: schema.TypeString,
 									},
-									"remixSettings": {
+									"remix_settings": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"channelMappings": {
+												"channel_mappings": {
 													Type: schema.TypeList,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"inputChannelLevels": {
+															"input_channel_levels": {
 																Type: schema.TypeList,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
 																		"gain": {
 																			Type: schema.TypeFloat,
 																		},
-																		"inputChannel": {
+																		"input_channel": {
 																			Type: schema.TypeFloat,
 																		},
 																	},
 																},
 															},
-															"outputChannel": {
+															"output_channel": {
 																Type: schema.TypeFloat,
 															},
 														},
 													},
 												},
-												"channelsIn": {
+												"channels_in": {
 													Type: schema.TypeFloat,
 												},
-												"channelsOut": {
+												"channels_out": {
 													Type: schema.TypeFloat,
 												},
 											},
 										},
 									},
-									"streamName": {
+									"stream_name": {
 										Type: schema.TypeString,
 									},
 								},
 							},
 						},
-						"availBlanking": {
+						"avail_blanking": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"availBlankingImage": {
+									"avail_blanking_image": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"passwordParam": {
+												"password_param": {
 													Type: schema.TypeString,
 												},
 												"uri": {
@@ -418,45 +418,45 @@ func ResourceSomeThing() *schema.Resource {
 								},
 							},
 						},
-						"availConfiguration": {
+						"avail_configuration": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"availSettings": {
+									"avail_settings": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"scte35SpliceInsert": {
+												"scte35_splice_insert": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"adAvailOffset": {
+															"ad_avail_offset": {
 																Type: schema.TypeFloat,
 															},
-															"noRegionalBlackoutFlag": {
+															"no_regional_blackout_flag": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"webDeliveryAllowedFlag": {
+															"web_delivery_allowed_flag": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
 													},
 												},
-												"scte35TimeSignalApos": {
+												"scte35_time_signal_apos": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"adAvailOffset": {
+															"ad_avail_offset": {
 																Type: schema.TypeFloat,
 															},
-															"noRegionalBlackoutFlag": {
+															"no_regional_blackout_flag": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"webDeliveryAllowedFlag": {
+															"web_delivery_allowed_flag": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
@@ -468,17 +468,17 @@ func ResourceSomeThing() *schema.Resource {
 								},
 							},
 						},
-						"blackoutSlate": {
+						"blackout_slate": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"blackoutSlateImage": {
+									"blackout_slate_image": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"passwordParam": {
+												"password_param": {
 													Type: schema.TypeString,
 												},
 												"uri": {
@@ -490,15 +490,15 @@ func ResourceSomeThing() *schema.Resource {
 											},
 										},
 									},
-									"networkEndBlackout": {
+									"network_end_blackout": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"networkEndBlackoutImage": {
+									"network_end_blackout_image": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"passwordParam": {
+												"password_param": {
 													Type: schema.TypeString,
 												},
 												"uri": {
@@ -510,7 +510,7 @@ func ResourceSomeThing() *schema.Resource {
 											},
 										},
 									},
-									"networkId": {
+									"network_id": {
 										Type: schema.TypeString,
 									},
 									"state": {
@@ -519,23 +519,23 @@ func ResourceSomeThing() *schema.Resource {
 								},
 							},
 						},
-						"captionDescriptions": {
+						"caption_descriptions": {
 							Type: schema.TypeList,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"captionSelectorName": {
+									"caption_selector_name": {
 										Type: schema.TypeString,
 									},
-									"destinationSettings": {
+									"destination_settings": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"aribDestinationSettings": {
+												"arib_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 												},
-												"burnInDestinationSettings": {
+												"burn_in_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
@@ -543,10 +543,10 @@ func ResourceSomeThing() *schema.Resource {
 															"alignment": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"backgroundColor": {
+															"background_color": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"backgroundOpacity": {
+															"background_opacity": {
 																Type: schema.TypeFloat,
 															},
 															"font": {
@@ -554,7 +554,7 @@ func ResourceSomeThing() *schema.Resource {
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"passwordParam": {
+																		"password_param": {
 																			Type: schema.TypeString,
 																		},
 																		"uri": {
@@ -566,49 +566,49 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"fontColor": {
+															"font_color": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"fontOpacity": {
+															"font_opacity": {
 																Type: schema.TypeFloat,
 															},
-															"fontResolution": {
+															"font_resolution": {
 																Type: schema.TypeFloat,
 															},
-															"fontSize": {
+															"font_size": {
 																Type: schema.TypeString,
 															},
-															"outlineColor": {
+															"outline_color": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"outlineSize": {
+															"outline_size": {
 																Type: schema.TypeFloat,
 															},
-															"shadowColor": {
+															"shadow_color": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"shadowOpacity": {
+															"shadow_opacity": {
 																Type: schema.TypeFloat,
 															},
-															"shadowXOffset": {
+															"shadow_x_offset": {
 																Type: schema.TypeFloat,
 															},
-															"shadowYOffset": {
+															"shadow_y_offset": {
 																Type: schema.TypeFloat,
 															},
-															"teletextGridControl": {
+															"teletext_grid_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"xPosition": {
+															"x_position": {
 																Type: schema.TypeFloat,
 															},
-															"yPosition": {
+															"y_position": {
 																Type: schema.TypeFloat,
 															},
 														},
 													},
 												},
-												"dvbSubDestinationSettings": {
+												"dvb_sub_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
@@ -616,10 +616,10 @@ func ResourceSomeThing() *schema.Resource {
 															"alignment": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"backgroundColor": {
+															"background_color": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"backgroundOpacity": {
+															"background_opacity": {
 																Type: schema.TypeFloat,
 															},
 															"font": {
@@ -627,7 +627,7 @@ func ResourceSomeThing() *schema.Resource {
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"passwordParam": {
+																		"password_param": {
 																			Type: schema.TypeString,
 																		},
 																		"uri": {
@@ -639,113 +639,113 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"fontColor": {
+															"font_color": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"fontOpacity": {
+															"font_opacity": {
 																Type: schema.TypeFloat,
 															},
-															"fontResolution": {
+															"font_resolution": {
 																Type: schema.TypeFloat,
 															},
-															"fontSize": {
+															"font_size": {
 																Type: schema.TypeString,
 															},
-															"outlineColor": {
+															"outline_color": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"outlineSize": {
+															"outline_size": {
 																Type: schema.TypeFloat,
 															},
-															"shadowColor": {
+															"shadow_color": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"shadowOpacity": {
+															"shadow_opacity": {
 																Type: schema.TypeFloat,
 															},
-															"shadowXOffset": {
+															"shadow_x_offset": {
 																Type: schema.TypeFloat,
 															},
-															"shadowYOffset": {
+															"shadow_y_offset": {
 																Type: schema.TypeFloat,
 															},
-															"teletextGridControl": {
+															"teletext_grid_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"xPosition": {
+															"x_position": {
 																Type: schema.TypeFloat,
 															},
-															"yPosition": {
+															"y_position": {
 																Type: schema.TypeFloat,
 															},
 														},
 													},
 												},
-												"ebuTtDDestinationSettings": {
+												"ebu_tt_d_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"copyrightHolder": {
+															"copyright_holder": {
 																Type: schema.TypeString,
 															},
-															"fillLineGap": {
+															"fill_line_gap": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"fontFamily": {
+															"font_family": {
 																Type: schema.TypeString,
 															},
-															"styleControl": {
+															"style_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
 													},
 												},
-												"embeddedDestinationSettings": {
+												"embedded_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 												},
-												"embeddedPlusScte20DestinationSettings": {
+												"embedded_plus_scte20_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 												},
-												"rtmpCaptionInfoDestinationSettings": {
+												"rtmp_caption_info_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 												},
-												"scte20PlusEmbeddedDestinationSettings": {
+												"scte20_plus_embedded_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 												},
-												"scte27DestinationSettings": {
+												"scte27_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 												},
-												"smpteTtDestinationSettings": {
+												"smpte_tt_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 												},
-												"teletextDestinationSettings": {
+												"teletext_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 												},
-												"ttmlDestinationSettings": {
+												"ttml_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"styleControl": {
+															"style_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
 													},
 												},
-												"webvttDestinationSettings": {
+												"webvtt_destination_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"styleControl": {
+															"style_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
@@ -754,10 +754,10 @@ func ResourceSomeThing() *schema.Resource {
 											},
 										},
 									},
-									"languageCode": {
+									"language_code": {
 										Type: schema.TypeString,
 									},
-									"languageDescription": {
+									"language_description": {
 										Type: schema.TypeString,
 									},
 									"name": {
@@ -766,45 +766,45 @@ func ResourceSomeThing() *schema.Resource {
 								},
 							},
 						},
-						"featureActivations": {
+						"feature_activations": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"inputPrepareScheduleActions": {
+									"input_prepare_schedule_actions": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
 								},
 							},
 						},
-						"globalConfiguration": {
+						"global_configuration": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"initialAudioGain": {
+									"initial_audio_gain": {
 										Type: schema.TypeFloat,
 									},
-									"inputEndAction": {
+									"input_end_action": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"inputLossBehavior": {
+									"input_loss_behavior": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"blackFrameMsec": {
+												"black_frame_msec": {
 													Type: schema.TypeFloat,
 												},
-												"inputLossImageColor": {
+												"input_loss_image_color": {
 													Type: schema.TypeString,
 												},
-												"inputLossImageSlate": {
+												"input_loss_image_slate": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"passwordParam": {
+															"password_param": {
 																Type: schema.TypeString,
 															},
 															"uri": {
@@ -816,41 +816,41 @@ func ResourceSomeThing() *schema.Resource {
 														},
 													},
 												},
-												"inputLossImageType": {
+												"input_loss_image_type": {
 													Type: schema.TypeString, // TODO: enum, add validation
 												},
-												"repeatFrameMsec": {
+												"repeat_frame_msec": {
 													Type: schema.TypeFloat,
 												},
 											},
 										},
 									},
-									"outputLockingMode": {
+									"output_locking_mode": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"outputTimingSource": {
+									"output_timing_source": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"supportLowFramerateInputs": {
+									"support_low_framerate_inputs": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
 								},
 							},
 						},
-						"motionGraphicsConfiguration": {
+						"motion_graphics_configuration": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"motionGraphicsInsertion": {
+									"motion_graphics_insertion": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"motionGraphicsSettings": {
+									"motion_graphics_settings": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"htmlMotionGraphicsSettings": {
+												"html_motion_graphics_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 												},
@@ -860,51 +860,51 @@ func ResourceSomeThing() *schema.Resource {
 								},
 							},
 						},
-						"nielsenConfiguration": {
+						"nielsen_configuration": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"distributorId": {
+									"distributor_id": {
 										Type: schema.TypeString,
 									},
-									"nielsenPcmToId3Tagging": {
+									"nielsen_pcm_to_id3_tagging": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
 								},
 							},
 						},
-						"outputGroups": {
+						"output_groups": {
 							Type: schema.TypeList,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
 									"name": {
 										Type: schema.TypeString,
 									},
-									"outputGroupSettings": {
+									"output_group_settings": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"archiveGroupSettings": {
+												"archive_group_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"archiveCdnSettings": {
+															"archive_cdn_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"archiveS3Settings": {
+																		"archive_s3_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"cannedAcl": {
+																					"canned_acl": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
-																					"logUploads": {
+																					"log_uploads": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
 																				},
@@ -918,19 +918,19 @@ func ResourceSomeThing() *schema.Resource {
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"destinationRefId": {
+																		"destination_ref_id": {
 																			Type: schema.TypeString,
 																		},
 																	},
 																},
 															},
-															"rolloverInterval": {
+															"rollover_interval": {
 																Type: schema.TypeFloat,
 															},
 														},
 													},
 												},
-												"frameCaptureGroupSettings": {
+												"frame_capture_group_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
@@ -940,26 +940,26 @@ func ResourceSomeThing() *schema.Resource {
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"destinationRefId": {
+																		"destination_ref_id": {
 																			Type: schema.TypeString,
 																		},
 																	},
 																},
 															},
-															"frameCaptureCdnSettings": {
+															"frame_capture_cdn_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"frameCaptureS3Settings": {
+																		"frame_capture_s3_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"cannedAcl": {
+																					"canned_acl": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
-																					"logUploads": {
+																					"log_uploads": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
 																				},
@@ -971,53 +971,53 @@ func ResourceSomeThing() *schema.Resource {
 														},
 													},
 												},
-												"hlsGroupSettings": {
+												"hls_group_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"adMarkers": {
+															"ad_markers": {
 																Type:  schema.TypeList,
 																Elems: &schema.Schema{Type: schema.TypeString},
 															},
-															"baseUrlContent": {
+															"base_url_content": {
 																Type: schema.TypeString,
 															},
-															"baseUrlContent1": {
+															"base_url_content1": {
 																Type: schema.TypeString,
 															},
-															"baseUrlManifest": {
+															"base_url_manifest": {
 																Type: schema.TypeString,
 															},
-															"baseUrlManifest1": {
+															"base_url_manifest1": {
 																Type: schema.TypeString,
 															},
-															"captionLanguageMappings": {
+															"caption_language_mappings": {
 																Type: schema.TypeList,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"captionChannel": {
+																		"caption_channel": {
 																			Type: schema.TypeFloat,
 																		},
-																		"languageCode": {
+																		"language_code": {
 																			Type: schema.TypeString,
 																		},
-																		"languageDescription": {
+																		"language_description": {
 																			Type: schema.TypeString,
 																		},
 																	},
 																},
 															},
-															"captionLanguageSetting": {
+															"caption_language_setting": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"clientCache": {
+															"client_cache": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"codecSpecification": {
+															"codec_specification": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"constantIv": {
+															"constant_iv": {
 																Type: schema.TypeString,
 															},
 															"destination": {
@@ -1025,44 +1025,44 @@ func ResourceSomeThing() *schema.Resource {
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"destinationRefId": {
+																		"destination_ref_id": {
 																			Type: schema.TypeString,
 																		},
 																	},
 																},
 															},
-															"directoryStructure": {
+															"directory_structure": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"discontinuityTags": {
+															"discontinuity_tags": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"encryptionType": {
+															"encryption_type": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"hlsCdnSettings": {
+															"hls_cdn_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"hlsAkamaiSettings": {
+																		"hls_akamai_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"connectionRetryInterval": {
+																					"connection_retry_interval": {
 																						Type: schema.TypeFloat,
 																					},
-																					"filecacheDuration": {
+																					"filecache_duration": {
 																						Type: schema.TypeFloat,
 																					},
-																					"httpTransferMode": {
+																					"http_transfer_mode": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
-																					"numRetries": {
+																					"num_retries": {
 																						Type: schema.TypeFloat,
 																					},
-																					"restartDelay": {
+																					"restart_delay": {
 																						Type: schema.TypeFloat,
 																					},
 																					"salt": {
@@ -1074,81 +1074,81 @@ func ResourceSomeThing() *schema.Resource {
 																				},
 																			},
 																		},
-																		"hlsBasicPutSettings": {
+																		"hls_basic_put_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"connectionRetryInterval": {
+																					"connection_retry_interval": {
 																						Type: schema.TypeFloat,
 																					},
-																					"filecacheDuration": {
+																					"filecache_duration": {
 																						Type: schema.TypeFloat,
 																					},
-																					"numRetries": {
+																					"num_retries": {
 																						Type: schema.TypeFloat,
 																					},
-																					"restartDelay": {
+																					"restart_delay": {
 																						Type: schema.TypeFloat,
 																					},
 																				},
 																			},
 																		},
-																		"hlsMediaStoreSettings": {
+																		"hls_media_store_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"connectionRetryInterval": {
+																					"connection_retry_interval": {
 																						Type: schema.TypeFloat,
 																					},
-																					"filecacheDuration": {
+																					"filecache_duration": {
 																						Type: schema.TypeFloat,
 																					},
-																					"mediaStoreStorageClass": {
+																					"media_store_storage_class": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
-																					"numRetries": {
+																					"num_retries": {
 																						Type: schema.TypeFloat,
 																					},
-																					"restartDelay": {
+																					"restart_delay": {
 																						Type: schema.TypeFloat,
 																					},
 																				},
 																			},
 																		},
-																		"hlsS3Settings": {
+																		"hls_s3_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"cannedAcl": {
+																					"canned_acl": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
-																					"logUploads": {
+																					"log_uploads": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
 																				},
 																			},
 																		},
-																		"hlsWebdavSettings": {
+																		"hls_webdav_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"connectionRetryInterval": {
+																					"connection_retry_interval": {
 																						Type: schema.TypeFloat,
 																					},
-																					"filecacheDuration": {
+																					"filecache_duration": {
 																						Type: schema.TypeFloat,
 																					},
-																					"httpTransferMode": {
+																					"http_transfer_mode": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
-																					"numRetries": {
+																					"num_retries": {
 																						Type: schema.TypeFloat,
 																					},
-																					"restartDelay": {
+																					"restart_delay": {
 																						Type: schema.TypeFloat,
 																					},
 																				},
@@ -1157,52 +1157,52 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"hlsId3SegmentTagging": {
+															"hls_id3_segment_tagging": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"iFrameOnlyPlaylists": {
+															"i_frame_only_playlists": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"incompleteSegmentBehavior": {
+															"incomplete_segment_behavior": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"indexNSegments": {
+															"index_n_segments": {
 																Type: schema.TypeFloat,
 															},
-															"inputLossAction": {
+															"input_loss_action": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"ivInManifest": {
+															"iv_in_manifest": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"ivSource": {
+															"iv_source": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"keepSegments": {
+															"keep_segments": {
 																Type: schema.TypeFloat,
 															},
-															"keyFormat": {
+															"key_format": {
 																Type: schema.TypeString,
 															},
-															"keyFormatVersions": {
+															"key_format_versions": {
 																Type: schema.TypeString,
 															},
-															"keyProviderSettings": {
+															"key_provider_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"staticKeySettings": {
+																		"static_key_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"keyProviderServer": {
+																					"key_provider_server": {
 																						Type:     schema.TypeList,
 																						MaxItems: 1,
 																						Elems: &schema.Resource{
 																							Schema: map[string]*schema.Schema{
-																								"passwordParam": {
+																								"password_param": {
 																									Type: schema.TypeString,
 																								},
 																								"uri": {
@@ -1214,7 +1214,7 @@ func ResourceSomeThing() *schema.Resource {
 																							},
 																						},
 																					},
-																					"staticKeyValue": {
+																					"static_key_value": {
 																						Type: schema.TypeString,
 																					},
 																				},
@@ -1223,61 +1223,61 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"manifestCompression": {
+															"manifest_compression": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"manifestDurationFormat": {
+															"manifest_duration_format": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"minSegmentLength": {
+															"min_segment_length": {
 																Type: schema.TypeFloat,
 															},
 															"mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"outputSelection": {
+															"output_selection": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"programDateTime": {
+															"program_date_time": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"programDateTimeClock": {
+															"program_date_time_clock": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"programDateTimePeriod": {
+															"program_date_time_period": {
 																Type: schema.TypeFloat,
 															},
-															"redundantManifest": {
+															"redundant_manifest": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"segmentLength": {
+															"segment_length": {
 																Type: schema.TypeFloat,
 															},
-															"segmentationMode": {
+															"segmentation_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"segmentsPerSubdirectory": {
+															"segments_per_subdirectory": {
 																Type: schema.TypeFloat,
 															},
-															"streamInfResolution": {
+															"stream_inf_resolution": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"timedMetadataId3Frame": {
+															"timed_metadata_id3_frame": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"timedMetadataId3Period": {
+															"timed_metadata_id3_period": {
 																Type: schema.TypeFloat,
 															},
-															"timestampDeltaMilliseconds": {
+															"timestamp_delta_milliseconds": {
 																Type: schema.TypeFloat,
 															},
-															"tsFileMode": {
+															"ts_file_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
 													},
 												},
-												"mediaPackageGroupSettings": {
+												"media_package_group_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
@@ -1287,7 +1287,7 @@ func ResourceSomeThing() *schema.Resource {
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"destinationRefId": {
+																		"destination_ref_id": {
 																			Type: schema.TypeString,
 																		},
 																	},
@@ -1296,21 +1296,21 @@ func ResourceSomeThing() *schema.Resource {
 														},
 													},
 												},
-												"msSmoothGroupSettings": {
+												"ms_smooth_group_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"acquisitionPointId": {
+															"acquisition_point_id": {
 																Type: schema.TypeString,
 															},
-															"audioOnlyTimecodeControl": {
+															"audio_only_timecode_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"certificateMode": {
+															"certificate_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"connectionRetryInterval": {
+															"connection_retry_interval": {
 																Type: schema.TypeFloat,
 															},
 															"destination": {
@@ -1318,103 +1318,103 @@ func ResourceSomeThing() *schema.Resource {
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"destinationRefId": {
+																		"destination_ref_id": {
 																			Type: schema.TypeString,
 																		},
 																	},
 																},
 															},
-															"eventId": {
+															"event_id": {
 																Type: schema.TypeString,
 															},
-															"eventIdMode": {
+															"event_id_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"eventStopBehavior": {
+															"event_stop_behavior": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"filecacheDuration": {
+															"filecache_duration": {
 																Type: schema.TypeFloat,
 															},
-															"fragmentLength": {
+															"fragment_length": {
 																Type: schema.TypeFloat,
 															},
-															"inputLossAction": {
+															"input_loss_action": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"numRetries": {
+															"num_retries": {
 																Type: schema.TypeFloat,
 															},
-															"restartDelay": {
+															"restart_delay": {
 																Type: schema.TypeFloat,
 															},
-															"segmentationMode": {
+															"segmentation_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"sendDelayMs": {
+															"send_delay_ms": {
 																Type: schema.TypeFloat,
 															},
-															"sparseTrackType": {
+															"sparse_track_type": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"streamManifestBehavior": {
+															"stream_manifest_behavior": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"timestampOffset": {
+															"timestamp_offset": {
 																Type: schema.TypeString,
 															},
-															"timestampOffsetMode": {
+															"timestamp_offset_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
 													},
 												},
-												"multiplexGroupSettings": {
+												"multiplex_group_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 												},
-												"rtmpGroupSettings": {
+												"rtmp_group_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"adMarkers": {
+															"ad_markers": {
 																Type:  schema.TypeList,
 																Elems: &schema.Schema{Type: schema.TypeString},
 															},
-															"authenticationScheme": {
+															"authentication_scheme": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"cacheFullBehavior": {
+															"cache_full_behavior": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"cacheLength": {
+															"cache_length": {
 																Type: schema.TypeFloat,
 															},
-															"captionData": {
+															"caption_data": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"inputLossAction": {
+															"input_loss_action": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"restartDelay": {
+															"restart_delay": {
 																Type: schema.TypeFloat,
 															},
 														},
 													},
 												},
-												"udpGroupSettings": {
+												"udp_group_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"inputLossAction": {
+															"input_loss_action": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"timedMetadataId3Frame": {
+															"timed_metadata_id3_frame": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"timedMetadataId3Period": {
+															"timed_metadata_id3_period": {
 																Type: schema.TypeFloat,
 															},
 														},
@@ -1427,221 +1427,221 @@ func ResourceSomeThing() *schema.Resource {
 										Type: schema.TypeList,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"audioDescriptionNames": {
+												"audio_description_names": {
 													Type:  schema.TypeList,
 													Elems: &schema.Schema{Type: schema.TypeString},
 												},
-												"captionDescriptionNames": {
+												"caption_description_names": {
 													Type:  schema.TypeList,
 													Elems: &schema.Schema{Type: schema.TypeString},
 												},
-												"outputName": {
+												"output_name": {
 													Type: schema.TypeString,
 												},
-												"outputSettings": {
+												"output_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"archiveOutputSettings": {
+															"archive_output_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"containerSettings": {
+																		"container_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"m2tsSettings": {
+																					"m2ts_settings": {
 																						Type:     schema.TypeList,
 																						MaxItems: 1,
 																						Elems: &schema.Resource{
 																							Schema: map[string]*schema.Schema{
-																								"absentInputAudioBehavior": {
+																								"absent_input_audio_behavior": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																								"arib": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"aribCaptionsPid": {
+																								"arib_captions_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"aribCaptionsPidControl": {
+																								"arib_captions_pid_control": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"audioBufferModel": {
+																								"audio_buffer_model": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"audioFramesPerPes": {
+																								"audio_frames_per_pes": {
 																									Type: schema.TypeFloat,
 																								},
-																								"audioPids": {
+																								"audio_pids": {
 																									Type: schema.TypeString,
 																								},
-																								"audioStreamType": {
+																								"audio_stream_type": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																								"bitrate": {
 																									Type: schema.TypeFloat,
 																								},
-																								"bufferModel": {
+																								"buffer_model": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"ccDescriptor": {
+																								"cc_descriptor": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"dvbNitSettings": {
+																								"dvb_nit_settings": {
 																									Type:     schema.TypeList,
 																									MaxItems: 1,
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
-																											"networkId": {
+																											"network_id": {
 																												Type: schema.TypeFloat,
 																											},
-																											"networkName": {
+																											"network_name": {
 																												Type: schema.TypeString,
 																											},
-																											"repInterval": {
+																											"rep_interval": {
 																												Type: schema.TypeFloat,
 																											},
 																										},
 																									},
 																								},
-																								"dvbSdtSettings": {
+																								"dvb_sdt_settings": {
 																									Type:     schema.TypeList,
 																									MaxItems: 1,
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
-																											"outputSdt": {
+																											"output_sdt": {
 																												Type: schema.TypeString, // TODO: enum, add validation
 																											},
-																											"repInterval": {
+																											"rep_interval": {
 																												Type: schema.TypeFloat,
 																											},
-																											"serviceName": {
+																											"service_name": {
 																												Type: schema.TypeString,
 																											},
-																											"serviceProviderName": {
+																											"service_provider_name": {
 																												Type: schema.TypeString,
 																											},
 																										},
 																									},
 																								},
-																								"dvbSubPids": {
+																								"dvb_sub_pids": {
 																									Type: schema.TypeString,
 																								},
-																								"dvbTdtSettings": {
+																								"dvb_tdt_settings": {
 																									Type:     schema.TypeList,
 																									MaxItems: 1,
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
-																											"repInterval": {
+																											"rep_interval": {
 																												Type: schema.TypeFloat,
 																											},
 																										},
 																									},
 																								},
-																								"dvbTeletextPid": {
+																								"dvb_teletext_pid": {
 																									Type: schema.TypeString,
 																								},
 																								"ebif": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"ebpAudioInterval": {
+																								"ebp_audio_interval": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"ebpLookaheadMs": {
+																								"ebp_lookahead_ms": {
 																									Type: schema.TypeFloat,
 																								},
-																								"ebpPlacement": {
+																								"ebp_placement": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"ecmPid": {
+																								"ecm_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"esRateInPes": {
+																								"es_rate_in_pes": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"etvPlatformPid": {
+																								"etv_platform_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"etvSignalPid": {
+																								"etv_signal_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"fragmentTime": {
+																								"fragment_time": {
 																									Type: schema.TypeFloat,
 																								},
 																								"klv": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"klvDataPids": {
+																								"klv_data_pids": {
 																									Type: schema.TypeString,
 																								},
-																								"nielsenId3Behavior": {
+																								"nielsen_id3_behavior": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"nullPacketBitrate": {
+																								"null_packet_bitrate": {
 																									Type: schema.TypeFloat,
 																								},
-																								"patInterval": {
+																								"pat_interval": {
 																									Type: schema.TypeFloat,
 																								},
-																								"pcrControl": {
+																								"pcr_control": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"pcrPeriod": {
+																								"pcr_period": {
 																									Type: schema.TypeFloat,
 																								},
-																								"pcrPid": {
+																								"pcr_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"pmtInterval": {
+																								"pmt_interval": {
 																									Type: schema.TypeFloat,
 																								},
-																								"pmtPid": {
+																								"pmt_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"programNum": {
+																								"program_num": {
 																									Type: schema.TypeFloat,
 																								},
-																								"rateMode": {
+																								"rate_mode": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"scte27Pids": {
+																								"scte27_pids": {
 																									Type: schema.TypeString,
 																								},
-																								"scte35Control": {
+																								"scte35_control": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"scte35Pid": {
+																								"scte35_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"segmentationMarkers": {
+																								"segmentation_markers": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"segmentationStyle": {
+																								"segmentation_style": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"segmentationTime": {
+																								"segmentation_time": {
 																									Type: schema.TypeFloat,
 																								},
-																								"timedMetadataBehavior": {
+																								"timed_metadata_behavior": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"timedMetadataPid": {
+																								"timed_metadata_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"transportStreamId": {
+																								"transport_stream_id": {
 																									Type: schema.TypeFloat,
 																								},
-																								"videoPid": {
+																								"video_pid": {
 																									Type: schema.TypeString,
 																								},
 																							},
 																						},
 																					},
-																					"rawSettings": {
+																					"raw_settings": {
 																						Type:     schema.TypeList,
 																						MaxItems: 1,
 																					},
@@ -1651,50 +1651,50 @@ func ResourceSomeThing() *schema.Resource {
 																		"extension": {
 																			Type: schema.TypeString,
 																		},
-																		"nameModifier": {
+																		"name_modifier": {
 																			Type: schema.TypeString,
 																		},
 																	},
 																},
 															},
-															"frameCaptureOutputSettings": {
+															"frame_capture_output_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"nameModifier": {
+																		"name_modifier": {
 																			Type: schema.TypeString,
 																		},
 																	},
 																},
 															},
-															"hlsOutputSettings": {
+															"hls_output_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"h265PackagingType": {
+																		"h265_packaging_type": {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
-																		"hlsSettings": {
+																		"hls_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"audioOnlyHlsSettings": {
+																					"audio_only_hls_settings": {
 																						Type:     schema.TypeList,
 																						MaxItems: 1,
 																						Elems: &schema.Resource{
 																							Schema: map[string]*schema.Schema{
-																								"audioGroupId": {
+																								"audio_group_id": {
 																									Type: schema.TypeString,
 																								},
-																								"audioOnlyImage": {
+																								"audio_only_image": {
 																									Type:     schema.TypeList,
 																									MaxItems: 1,
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
-																											"passwordParam": {
+																											"password_param": {
 																												Type: schema.TypeString,
 																											},
 																											"uri": {
@@ -1706,98 +1706,98 @@ func ResourceSomeThing() *schema.Resource {
 																										},
 																									},
 																								},
-																								"audioTrackType": {
+																								"audio_track_type": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"segmentType": {
-																									Type: schema.TypeString, // TODO: enum, add validation
-																								},
-																							},
-																						},
-																					},
-																					"fmp4HlsSettings": {
-																						Type:     schema.TypeList,
-																						MaxItems: 1,
-																						Elems: &schema.Resource{
-																							Schema: map[string]*schema.Schema{
-																								"audioRenditionSets": {
-																									Type: schema.TypeString,
-																								},
-																								"nielsenId3Behavior": {
-																									Type: schema.TypeString, // TODO: enum, add validation
-																								},
-																								"timedMetadataBehavior": {
+																								"segment_type": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																							},
 																						},
 																					},
-																					"frameCaptureHlsSettings": {
-																						Type:     schema.TypeList,
-																						MaxItems: 1,
-																					},
-																					"standardHlsSettings": {
+																					"fmp4_hls_settings": {
 																						Type:     schema.TypeList,
 																						MaxItems: 1,
 																						Elems: &schema.Resource{
 																							Schema: map[string]*schema.Schema{
-																								"audioRenditionSets": {
+																								"audio_rendition_sets": {
 																									Type: schema.TypeString,
 																								},
-																								"m3u8Settings": {
+																								"nielsen_id3_behavior": {
+																									Type: schema.TypeString, // TODO: enum, add validation
+																								},
+																								"timed_metadata_behavior": {
+																									Type: schema.TypeString, // TODO: enum, add validation
+																								},
+																							},
+																						},
+																					},
+																					"frame_capture_hls_settings": {
+																						Type:     schema.TypeList,
+																						MaxItems: 1,
+																					},
+																					"standard_hls_settings": {
+																						Type:     schema.TypeList,
+																						MaxItems: 1,
+																						Elems: &schema.Resource{
+																							Schema: map[string]*schema.Schema{
+																								"audio_rendition_sets": {
+																									Type: schema.TypeString,
+																								},
+																								"m3u8_settings": {
 																									Type:     schema.TypeList,
 																									MaxItems: 1,
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
-																											"audioFramesPerPes": {
+																											"audio_frames_per_pes": {
 																												Type: schema.TypeFloat,
 																											},
-																											"audioPids": {
+																											"audio_pids": {
 																												Type: schema.TypeString,
 																											},
-																											"ecmPid": {
+																											"ecm_pid": {
 																												Type: schema.TypeString,
 																											},
-																											"nielsenId3Behavior": {
+																											"nielsen_id3_behavior": {
 																												Type: schema.TypeString, // TODO: enum, add validation
 																											},
-																											"patInterval": {
+																											"pat_interval": {
 																												Type: schema.TypeFloat,
 																											},
-																											"pcrControl": {
+																											"pcr_control": {
 																												Type: schema.TypeString, // TODO: enum, add validation
 																											},
-																											"pcrPeriod": {
+																											"pcr_period": {
 																												Type: schema.TypeFloat,
 																											},
-																											"pcrPid": {
+																											"pcr_pid": {
 																												Type: schema.TypeString,
 																											},
-																											"pmtInterval": {
+																											"pmt_interval": {
 																												Type: schema.TypeFloat,
 																											},
-																											"pmtPid": {
+																											"pmt_pid": {
 																												Type: schema.TypeString,
 																											},
-																											"programNum": {
+																											"program_num": {
 																												Type: schema.TypeFloat,
 																											},
-																											"scte35Behavior": {
+																											"scte35_behavior": {
 																												Type: schema.TypeString, // TODO: enum, add validation
 																											},
-																											"scte35Pid": {
+																											"scte35_pid": {
 																												Type: schema.TypeString,
 																											},
-																											"timedMetadataBehavior": {
+																											"timed_metadata_behavior": {
 																												Type: schema.TypeString, // TODO: enum, add validation
 																											},
-																											"timedMetadataPid": {
+																											"timed_metadata_pid": {
 																												Type: schema.TypeString,
 																											},
-																											"transportStreamId": {
+																											"transport_stream_id": {
 																												Type: schema.TypeFloat,
 																											},
-																											"videoPid": {
+																											"video_pid": {
 																												Type: schema.TypeString,
 																											},
 																										},
@@ -1809,34 +1809,34 @@ func ResourceSomeThing() *schema.Resource {
 																				},
 																			},
 																		},
-																		"nameModifier": {
+																		"name_modifier": {
 																			Type: schema.TypeString,
 																		},
-																		"segmentModifier": {
+																		"segment_modifier": {
 																			Type: schema.TypeString,
 																		},
 																	},
 																},
 															},
-															"mediaPackageOutputSettings": {
+															"media_package_output_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 															},
-															"msSmoothOutputSettings": {
+															"ms_smooth_output_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"h265PackagingType": {
+																		"h265_packaging_type": {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
-																		"nameModifier": {
+																		"name_modifier": {
 																			Type: schema.TypeString,
 																		},
 																	},
 																},
 															},
-															"multiplexOutputSettings": {
+															"multiplex_output_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
@@ -1846,7 +1846,7 @@ func ResourceSomeThing() *schema.Resource {
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"destinationRefId": {
+																					"destination_ref_id": {
 																						Type: schema.TypeString,
 																					},
 																				},
@@ -1855,15 +1855,15 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"rtmpOutputSettings": {
+															"rtmp_output_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"certificateMode": {
+																		"certificate_mode": {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
-																		"connectionRetryInterval": {
+																		"connection_retry_interval": {
 																			Type: schema.TypeFloat,
 																		},
 																		"destination": {
@@ -1871,214 +1871,214 @@ func ResourceSomeThing() *schema.Resource {
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"destinationRefId": {
+																					"destination_ref_id": {
 																						Type: schema.TypeString,
 																					},
 																				},
 																			},
 																		},
-																		"numRetries": {
+																		"num_retries": {
 																			Type: schema.TypeFloat,
 																		},
 																	},
 																},
 															},
-															"udpOutputSettings": {
+															"udp_output_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"bufferMsec": {
+																		"buffer_msec": {
 																			Type: schema.TypeFloat,
 																		},
-																		"containerSettings": {
+																		"container_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"m2tsSettings": {
+																					"m2ts_settings": {
 																						Type:     schema.TypeList,
 																						MaxItems: 1,
 																						Elems: &schema.Resource{
 																							Schema: map[string]*schema.Schema{
-																								"absentInputAudioBehavior": {
+																								"absent_input_audio_behavior": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																								"arib": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"aribCaptionsPid": {
+																								"arib_captions_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"aribCaptionsPidControl": {
+																								"arib_captions_pid_control": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"audioBufferModel": {
+																								"audio_buffer_model": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"audioFramesPerPes": {
+																								"audio_frames_per_pes": {
 																									Type: schema.TypeFloat,
 																								},
-																								"audioPids": {
+																								"audio_pids": {
 																									Type: schema.TypeString,
 																								},
-																								"audioStreamType": {
+																								"audio_stream_type": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
 																								"bitrate": {
 																									Type: schema.TypeFloat,
 																								},
-																								"bufferModel": {
+																								"buffer_model": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"ccDescriptor": {
+																								"cc_descriptor": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"dvbNitSettings": {
+																								"dvb_nit_settings": {
 																									Type:     schema.TypeList,
 																									MaxItems: 1,
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
-																											"networkId": {
+																											"network_id": {
 																												Type: schema.TypeFloat,
 																											},
-																											"networkName": {
+																											"network_name": {
 																												Type: schema.TypeString,
 																											},
-																											"repInterval": {
+																											"rep_interval": {
 																												Type: schema.TypeFloat,
 																											},
 																										},
 																									},
 																								},
-																								"dvbSdtSettings": {
+																								"dvb_sdt_settings": {
 																									Type:     schema.TypeList,
 																									MaxItems: 1,
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
-																											"outputSdt": {
+																											"output_sdt": {
 																												Type: schema.TypeString, // TODO: enum, add validation
 																											},
-																											"repInterval": {
+																											"rep_interval": {
 																												Type: schema.TypeFloat,
 																											},
-																											"serviceName": {
+																											"service_name": {
 																												Type: schema.TypeString,
 																											},
-																											"serviceProviderName": {
+																											"service_provider_name": {
 																												Type: schema.TypeString,
 																											},
 																										},
 																									},
 																								},
-																								"dvbSubPids": {
+																								"dvb_sub_pids": {
 																									Type: schema.TypeString,
 																								},
-																								"dvbTdtSettings": {
+																								"dvb_tdt_settings": {
 																									Type:     schema.TypeList,
 																									MaxItems: 1,
 																									Elems: &schema.Resource{
 																										Schema: map[string]*schema.Schema{
-																											"repInterval": {
+																											"rep_interval": {
 																												Type: schema.TypeFloat,
 																											},
 																										},
 																									},
 																								},
-																								"dvbTeletextPid": {
+																								"dvb_teletext_pid": {
 																									Type: schema.TypeString,
 																								},
 																								"ebif": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"ebpAudioInterval": {
+																								"ebp_audio_interval": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"ebpLookaheadMs": {
+																								"ebp_lookahead_ms": {
 																									Type: schema.TypeFloat,
 																								},
-																								"ebpPlacement": {
+																								"ebp_placement": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"ecmPid": {
+																								"ecm_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"esRateInPes": {
+																								"es_rate_in_pes": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"etvPlatformPid": {
+																								"etv_platform_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"etvSignalPid": {
+																								"etv_signal_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"fragmentTime": {
+																								"fragment_time": {
 																									Type: schema.TypeFloat,
 																								},
 																								"klv": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"klvDataPids": {
+																								"klv_data_pids": {
 																									Type: schema.TypeString,
 																								},
-																								"nielsenId3Behavior": {
+																								"nielsen_id3_behavior": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"nullPacketBitrate": {
+																								"null_packet_bitrate": {
 																									Type: schema.TypeFloat,
 																								},
-																								"patInterval": {
+																								"pat_interval": {
 																									Type: schema.TypeFloat,
 																								},
-																								"pcrControl": {
+																								"pcr_control": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"pcrPeriod": {
+																								"pcr_period": {
 																									Type: schema.TypeFloat,
 																								},
-																								"pcrPid": {
+																								"pcr_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"pmtInterval": {
+																								"pmt_interval": {
 																									Type: schema.TypeFloat,
 																								},
-																								"pmtPid": {
+																								"pmt_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"programNum": {
+																								"program_num": {
 																									Type: schema.TypeFloat,
 																								},
-																								"rateMode": {
+																								"rate_mode": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"scte27Pids": {
+																								"scte27_pids": {
 																									Type: schema.TypeString,
 																								},
-																								"scte35Control": {
+																								"scte35_control": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"scte35Pid": {
+																								"scte35_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"segmentationMarkers": {
+																								"segmentation_markers": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"segmentationStyle": {
+																								"segmentation_style": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"segmentationTime": {
+																								"segmentation_time": {
 																									Type: schema.TypeFloat,
 																								},
-																								"timedMetadataBehavior": {
+																								"timed_metadata_behavior": {
 																									Type: schema.TypeString, // TODO: enum, add validation
 																								},
-																								"timedMetadataPid": {
+																								"timed_metadata_pid": {
 																									Type: schema.TypeString,
 																								},
-																								"transportStreamId": {
+																								"transport_stream_id": {
 																									Type: schema.TypeFloat,
 																								},
-																								"videoPid": {
+																								"video_pid": {
 																									Type: schema.TypeString,
 																								},
 																							},
@@ -2092,24 +2092,24 @@ func ResourceSomeThing() *schema.Resource {
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"destinationRefId": {
+																					"destination_ref_id": {
 																						Type: schema.TypeString,
 																					},
 																				},
 																			},
 																		},
-																		"fecOutputSettings": {
+																		"fec_output_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"columnDepth": {
+																					"column_depth": {
 																						Type: schema.TypeFloat,
 																					},
-																					"includeFec": {
+																					"include_fec": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
-																					"rowLength": {
+																					"row_length": {
 																						Type: schema.TypeFloat,
 																					},
 																				},
@@ -2121,7 +2121,7 @@ func ResourceSomeThing() *schema.Resource {
 														},
 													},
 												},
-												"videoDescriptionName": {
+												"video_description_name": {
 													Type: schema.TypeString,
 												},
 											},
@@ -2130,7 +2130,7 @@ func ResourceSomeThing() *schema.Resource {
 								},
 							},
 						},
-						"timecodeConfig": {
+						"timecode_config": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
@@ -2138,92 +2138,92 @@ func ResourceSomeThing() *schema.Resource {
 									"source": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"syncThreshold": {
+									"sync_threshold": {
 										Type: schema.TypeFloat,
 									},
 								},
 							},
 						},
-						"videoDescriptions": {
+						"video_descriptions": {
 							Type: schema.TypeList,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"codecSettings": {
+									"codec_settings": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"frameCaptureSettings": {
+												"frame_capture_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"captureInterval": {
+															"capture_interval": {
 																Type: schema.TypeFloat,
 															},
-															"captureIntervalUnits": {
+															"capture_interval_units": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
 													},
 												},
-												"h264Settings": {
+												"h264_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"adaptiveQuantization": {
+															"adaptive_quantization": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"afdSignaling": {
+															"afd_signaling": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"bitrate": {
 																Type: schema.TypeFloat,
 															},
-															"bufFillPct": {
+															"buf_fill_pct": {
 																Type: schema.TypeFloat,
 															},
-															"bufSize": {
+															"buf_size": {
 																Type: schema.TypeFloat,
 															},
-															"colorMetadata": {
+															"color_metadata": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"colorSpaceSettings": {
+															"color_space_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"colorSpacePassthroughSettings": {
+																		"color_space_passthrough_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																		},
-																		"rec601Settings": {
+																		"rec601_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																		},
-																		"rec709Settings": {
+																		"rec709_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																		},
 																	},
 																},
 															},
-															"entropyEncoding": {
+															"entropy_encoding": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"filterSettings": {
+															"filter_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"temporalFilterSettings": {
+																		"temporal_filter_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"postFilterSharpening": {
+																					"post_filter_sharpening": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
 																					"strength": {
@@ -2235,79 +2235,79 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"fixedAfd": {
+															"fixed_afd": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"flickerAq": {
+															"flicker_aq": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"forceFieldPictures": {
+															"force_field_pictures": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"framerateControl": {
+															"framerate_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"framerateDenominator": {
+															"framerate_denominator": {
 																Type: schema.TypeFloat,
 															},
-															"framerateNumerator": {
+															"framerate_numerator": {
 																Type: schema.TypeFloat,
 															},
-															"gopBReference": {
+															"gop_b_reference": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"gopClosedCadence": {
+															"gop_closed_cadence": {
 																Type: schema.TypeFloat,
 															},
-															"gopNumBFrames": {
+															"gop_num_b_frames": {
 																Type: schema.TypeFloat,
 															},
-															"gopSize": {
+															"gop_size": {
 																Type: schema.TypeFloat,
 															},
-															"gopSizeUnits": {
+															"gop_size_units": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"level": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"lookAheadRateControl": {
+															"look_ahead_rate_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"maxBitrate": {
+															"max_bitrate": {
 																Type: schema.TypeFloat,
 															},
-															"minIInterval": {
+															"min_i_interval": {
 																Type: schema.TypeFloat,
 															},
-															"numRefFrames": {
+															"num_ref_frames": {
 																Type: schema.TypeFloat,
 															},
-															"parControl": {
+															"par_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"parDenominator": {
+															"par_denominator": {
 																Type: schema.TypeFloat,
 															},
-															"parNumerator": {
+															"par_numerator": {
 																Type: schema.TypeFloat,
 															},
 															"profile": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"qualityLevel": {
+															"quality_level": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"qvbrQualityLevel": {
+															"qvbr_quality_level": {
 																Type: schema.TypeFloat,
 															},
-															"rateControlMode": {
+															"rate_control_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"scanType": {
+															"scan_type": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"sceneChangeDetect": {
+															"scene_change_detect": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"slices": {
@@ -2316,92 +2316,92 @@ func ResourceSomeThing() *schema.Resource {
 															"softness": {
 																Type: schema.TypeFloat,
 															},
-															"spatialAq": {
+															"spatial_aq": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"subgopLength": {
+															"subgop_length": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"syntax": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"temporalAq": {
+															"temporal_aq": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"timecodeInsertion": {
+															"timecode_insertion": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
 													},
 												},
-												"h265Settings": {
+												"h265_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"adaptiveQuantization": {
+															"adaptive_quantization": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"afdSignaling": {
+															"afd_signaling": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"alternativeTransferFunction": {
+															"alternative_transfer_function": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"bitrate": {
 																Type: schema.TypeFloat,
 															},
-															"bufSize": {
+															"buf_size": {
 																Type: schema.TypeFloat,
 															},
-															"colorMetadata": {
+															"color_metadata": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"colorSpaceSettings": {
+															"color_space_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"colorSpacePassthroughSettings": {
+																		"color_space_passthrough_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																		},
-																		"hdr10Settings": {
+																		"hdr10_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"maxCll": {
+																					"max_cll": {
 																						Type: schema.TypeFloat,
 																					},
-																					"maxFall": {
+																					"max_fall": {
 																						Type: schema.TypeFloat,
 																					},
 																				},
 																			},
 																		},
-																		"rec601Settings": {
+																		"rec601_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																		},
-																		"rec709Settings": {
+																		"rec709_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																		},
 																	},
 																},
 															},
-															"filterSettings": {
+															"filter_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"temporalFilterSettings": {
+																		"temporal_filter_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"postFilterSharpening": {
+																					"post_filter_sharpening": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
 																					"strength": {
@@ -2413,58 +2413,58 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"fixedAfd": {
+															"fixed_afd": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"flickerAq": {
+															"flicker_aq": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"framerateDenominator": {
+															"framerate_denominator": {
 																Type: schema.TypeFloat,
 															},
-															"framerateNumerator": {
+															"framerate_numerator": {
 																Type: schema.TypeFloat,
 															},
-															"gopClosedCadence": {
+															"gop_closed_cadence": {
 																Type: schema.TypeFloat,
 															},
-															"gopSize": {
+															"gop_size": {
 																Type: schema.TypeFloat,
 															},
-															"gopSizeUnits": {
+															"gop_size_units": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"level": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"lookAheadRateControl": {
+															"look_ahead_rate_control": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"maxBitrate": {
+															"max_bitrate": {
 																Type: schema.TypeFloat,
 															},
-															"minIInterval": {
+															"min_i_interval": {
 																Type: schema.TypeFloat,
 															},
-															"parDenominator": {
+															"par_denominator": {
 																Type: schema.TypeFloat,
 															},
-															"parNumerator": {
+															"par_numerator": {
 																Type: schema.TypeFloat,
 															},
 															"profile": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"qvbrQualityLevel": {
+															"qvbr_quality_level": {
 																Type: schema.TypeFloat,
 															},
-															"rateControlMode": {
+															"rate_control_mode": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"scanType": {
+															"scan_type": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"sceneChangeDetect": {
+															"scene_change_detect": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 															"slices": {
@@ -2473,43 +2473,43 @@ func ResourceSomeThing() *schema.Resource {
 															"tier": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"timecodeInsertion": {
+															"timecode_insertion": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
 													},
 												},
-												"mpeg2Settings": {
+												"mpeg2_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"adaptiveQuantization": {
+															"adaptive_quantization": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"afdSignaling": {
+															"afd_signaling": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"colorMetadata": {
+															"color_metadata": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"colorSpace": {
+															"color_space": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"displayAspectRatio": {
+															"display_aspect_ratio": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"filterSettings": {
+															"filter_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"temporalFilterSettings": {
+																		"temporal_filter_settings": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
 																				Schema: map[string]*schema.Schema{
-																					"postFilterSharpening": {
+																					"post_filter_sharpening": {
 																						Type: schema.TypeString, // TODO: enum, add validation
 																					},
 																					"strength": {
@@ -2521,34 +2521,34 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"fixedAfd": {
+															"fixed_afd": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"framerateDenominator": {
+															"framerate_denominator": {
 																Type: schema.TypeFloat,
 															},
-															"framerateNumerator": {
+															"framerate_numerator": {
 																Type: schema.TypeFloat,
 															},
-															"gopClosedCadence": {
+															"gop_closed_cadence": {
 																Type: schema.TypeFloat,
 															},
-															"gopNumBFrames": {
+															"gop_num_b_frames": {
 																Type: schema.TypeFloat,
 															},
-															"gopSize": {
+															"gop_size": {
 																Type: schema.TypeFloat,
 															},
-															"gopSizeUnits": {
+															"gop_size_units": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"scanType": {
+															"scan_type": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"subgopLength": {
+															"subgop_length": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
-															"timecodeInsertion": {
+															"timecode_insertion": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
@@ -2563,10 +2563,10 @@ func ResourceSomeThing() *schema.Resource {
 									"name": {
 										Type: schema.TypeString,
 									},
-									"respondToAfd": {
+									"respond_to_afd": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"scalingBehavior": {
+									"scaling_behavior": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
 									"sharpness": {
@@ -2581,61 +2581,61 @@ func ResourceSomeThing() *schema.Resource {
 					},
 				},
 			},
-			"inputAttachments": {
+			"input_attachments": {
 				Type: schema.TypeList,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"automaticInputFailoverSettings": {
+						"automatic_input_failover_settings": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"errorClearTimeMsec": {
+									"error_clear_time_msec": {
 										Type: schema.TypeFloat,
 									},
-									"failoverConditions": {
+									"failover_conditions": {
 										Type: schema.TypeList,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"failoverConditionSettings": {
+												"failover_condition_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"audioSilenceSettings": {
+															"audio_silence_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"audioSelectorName": {
+																		"audio_selector_name": {
 																			Type: schema.TypeString,
 																		},
-																		"audioSilenceThresholdMsec": {
+																		"audio_silence_threshold_msec": {
 																			Type: schema.TypeFloat,
 																		},
 																	},
 																},
 															},
-															"inputLossSettings": {
+															"input_loss_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"inputLossThresholdMsec": {
+																		"input_loss_threshold_msec": {
 																			Type: schema.TypeFloat,
 																		},
 																	},
 																},
 															},
-															"videoBlackSettings": {
+															"video_black_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"blackDetectThreshold": {
+																		"black_detect_threshold": {
 																			Type: schema.TypeFloat,
 																		},
-																		"videoBlackThresholdMsec": {
+																		"video_black_threshold_msec": {
 																			Type: schema.TypeFloat,
 																		},
 																	},
@@ -2647,44 +2647,44 @@ func ResourceSomeThing() *schema.Resource {
 											},
 										},
 									},
-									"inputPreference": {
+									"input_preference": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"secondaryInputId": {
+									"secondary_input_id": {
 										Type: schema.TypeString,
 									},
 								},
 							},
 						},
-						"inputAttachmentName": {
+						"input_attachment_name": {
 							Type: schema.TypeString,
 						},
-						"inputId": {
+						"input_id": {
 							Type: schema.TypeString,
 						},
-						"inputSettings": {
+						"input_settings": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"audioSelectors": {
+									"audio_selectors": {
 										Type: schema.TypeList,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
 												"name": {
 													Type: schema.TypeString,
 												},
-												"selectorSettings": {
+												"selector_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"audioHlsRenditionSelection": {
+															"audio_hls_rendition_selection": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"groupId": {
+																		"group_id": {
 																			Type: schema.TypeString,
 																		},
 																		"name": {
@@ -2693,21 +2693,21 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"audioLanguageSelection": {
+															"audio_language_selection": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"languageCode": {
+																		"language_code": {
 																			Type: schema.TypeString,
 																		},
-																		"languageSelectionPolicy": {
+																		"language_selection_policy": {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
 																	},
 																},
 															},
-															"audioPidSelection": {
+															"audio_pid_selection": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
@@ -2718,7 +2718,7 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"audioTrackSelection": {
+															"audio_track_selection": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
@@ -2742,42 +2742,42 @@ func ResourceSomeThing() *schema.Resource {
 											},
 										},
 									},
-									"captionSelectors": {
+									"caption_selectors": {
 										Type: schema.TypeList,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"languageCode": {
+												"language_code": {
 													Type: schema.TypeString,
 												},
 												"name": {
 													Type: schema.TypeString,
 												},
-												"selectorSettings": {
+												"selector_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"ancillarySourceSettings": {
+															"ancillary_source_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"sourceAncillaryChannelNumber": {
+																		"source_ancillary_channel_number": {
 																			Type: schema.TypeFloat,
 																		},
 																	},
 																},
 															},
-															"aribSourceSettings": {
+															"arib_source_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 															},
-															"dvbSubSourceSettings": {
+															"dvb_sub_source_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"ocrLanguage": {
+																		"ocr_language": {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
 																		"pid": {
@@ -2786,46 +2786,46 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"embeddedSourceSettings": {
+															"embedded_source_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"convert608To708": {
+																		"convert608_to708": {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
-																		"scte20Detection": {
+																		"scte20_detection": {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
-																		"source608ChannelNumber": {
+																		"source608_channel_number": {
 																			Type: schema.TypeFloat,
 																		},
-																		"source608TrackNumber": {
-																			Type: schema.TypeFloat,
-																		},
-																	},
-																},
-															},
-															"scte20SourceSettings": {
-																Type:     schema.TypeList,
-																MaxItems: 1,
-																Elems: &schema.Resource{
-																	Schema: map[string]*schema.Schema{
-																		"convert608To708": {
-																			Type: schema.TypeString, // TODO: enum, add validation
-																		},
-																		"source608ChannelNumber": {
+																		"source608_track_number": {
 																			Type: schema.TypeFloat,
 																		},
 																	},
 																},
 															},
-															"scte27SourceSettings": {
+															"scte20_source_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"ocrLanguage": {
+																		"convert608_to708": {
+																			Type: schema.TypeString, // TODO: enum, add validation
+																		},
+																		"source608_channel_number": {
+																			Type: schema.TypeFloat,
+																		},
+																	},
+																},
+															},
+															"scte27_source_settings": {
+																Type:     schema.TypeList,
+																MaxItems: 1,
+																Elems: &schema.Resource{
+																	Schema: map[string]*schema.Schema{
+																		"ocr_language": {
 																			Type: schema.TypeString, // TODO: enum, add validation
 																		},
 																		"pid": {
@@ -2834,12 +2834,12 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"teletextSourceSettings": {
+															"teletext_source_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"outputRectangle": {
+																		"output_rectangle": {
 																			Type:     schema.TypeList,
 																			MaxItems: 1,
 																			Elems: &schema.Resource{
@@ -2847,10 +2847,10 @@ func ResourceSomeThing() *schema.Resource {
 																					"height": {
 																						Type: schema.TypeFloat,
 																					},
-																					"leftOffset": {
+																					"left_offset": {
 																						Type: schema.TypeFloat,
 																					},
-																					"topOffset": {
+																					"top_offset": {
 																						Type: schema.TypeFloat,
 																					},
 																					"width": {
@@ -2859,7 +2859,7 @@ func ResourceSomeThing() *schema.Resource {
 																				},
 																			},
 																		},
-																		"pageNumber": {
+																		"page_number": {
 																			Type: schema.TypeString,
 																		},
 																	},
@@ -2871,24 +2871,24 @@ func ResourceSomeThing() *schema.Resource {
 											},
 										},
 									},
-									"deblockFilter": {
+									"deblock_filter": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"denoiseFilter": {
+									"denoise_filter": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"filterStrength": {
+									"filter_strength": {
 										Type: schema.TypeFloat,
 									},
-									"inputFilter": {
+									"input_filter": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"networkInputSettings": {
+									"network_input_settings": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"hlsInputSettings": {
+												"hls_input_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
@@ -2896,55 +2896,55 @@ func ResourceSomeThing() *schema.Resource {
 															"bandwidth": {
 																Type: schema.TypeFloat,
 															},
-															"bufferSegments": {
+															"buffer_segments": {
 																Type: schema.TypeFloat,
 															},
 															"retries": {
 																Type: schema.TypeFloat,
 															},
-															"retryInterval": {
+															"retry_interval": {
 																Type: schema.TypeFloat,
 															},
-															"scte35Source": {
+															"scte35_source": {
 																Type: schema.TypeString, // TODO: enum, add validation
 															},
 														},
 													},
 												},
-												"serverValidation": {
+												"server_validation": {
 													Type: schema.TypeString, // TODO: enum, add validation
 												},
 											},
 										},
 									},
-									"smpte2038DataPreference": {
+									"smpte2038_data_preference": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"sourceEndBehavior": {
+									"source_end_behavior": {
 										Type: schema.TypeString, // TODO: enum, add validation
 									},
-									"videoSelector": {
+									"video_selector": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"colorSpace": {
+												"color_space": {
 													Type: schema.TypeString, // TODO: enum, add validation
 												},
-												"colorSpaceSettings": {
+												"color_space_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"hdr10Settings": {
+															"hdr10_settings": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"maxCll": {
+																		"max_cll": {
 																			Type: schema.TypeFloat,
 																		},
-																		"maxFall": {
+																		"max_fall": {
 																			Type: schema.TypeFloat,
 																		},
 																	},
@@ -2953,15 +2953,15 @@ func ResourceSomeThing() *schema.Resource {
 														},
 													},
 												},
-												"colorSpaceUsage": {
+												"color_space_usage": {
 													Type: schema.TypeString, // TODO: enum, add validation
 												},
-												"selectorSettings": {
+												"selector_settings": {
 													Type:     schema.TypeList,
 													MaxItems: 1,
 													Elems: &schema.Resource{
 														Schema: map[string]*schema.Schema{
-															"videoSelectorPid": {
+															"video_selector_pid": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
@@ -2972,12 +2972,12 @@ func ResourceSomeThing() *schema.Resource {
 																	},
 																},
 															},
-															"videoSelectorProgramId": {
+															"video_selector_program_id": {
 																Type:     schema.TypeList,
 																MaxItems: 1,
 																Elems: &schema.Resource{
 																	Schema: map[string]*schema.Schema{
-																		"programId": {
+																		"program_id": {
 																			Type: schema.TypeFloat,
 																		},
 																	},
@@ -2995,7 +2995,7 @@ func ResourceSomeThing() *schema.Resource {
 					},
 				},
 			},
-			"inputSpecification": {
+			"input_specification": {
 				Type:     schema.TypeList,
 				MaxItems: 1,
 				Elems: &schema.Resource{
@@ -3003,7 +3003,7 @@ func ResourceSomeThing() *schema.Resource {
 						"codec": {
 							Type: schema.TypeString, // TODO: enum, add validation
 						},
-						"maximumBitrate": {
+						"maximum_bitrate": {
 							Type: schema.TypeString, // TODO: enum, add validation
 						},
 						"resolution": {
@@ -3012,7 +3012,7 @@ func ResourceSomeThing() *schema.Resource {
 					},
 				},
 			},
-			"logLevel": {
+			"log_level": {
 				Type: schema.TypeString, // TODO: enum, add validation
 			},
 			"maintenance": {
@@ -3020,10 +3020,10 @@ func ResourceSomeThing() *schema.Resource {
 				MaxItems: 1,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"maintenanceDay": {
+						"maintenance_day": {
 							Type: schema.TypeString, // TODO: enum, add validation
 						},
-						"maintenanceStartTime": {
+						"maintenance_start_time": {
 							Type: schema.TypeString,
 						},
 					},
@@ -3035,7 +3035,7 @@ func ResourceSomeThing() *schema.Resource {
 			"reserved": {
 				Type: schema.TypeString,
 			},
-			"roleArn": {
+			"role_arn": {
 				Type: schema.TypeString,
 			},
 			"vpc": {
@@ -3043,15 +3043,15 @@ func ResourceSomeThing() *schema.Resource {
 				MaxItems: 1,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"publicAddressAllocationIds": {
+						"public_address_allocation_ids": {
 							Type:  schema.TypeList,
 							Elems: &schema.Schema{Type: schema.TypeString},
 						},
-						"securityGroupIds": {
+						"security_group_ids": {
 							Type:  schema.TypeList,
 							Elems: &schema.Schema{Type: schema.TypeString},
 						},
-						"subnetIds": {
+						"subnet_ids": {
 							Type:  schema.TypeList,
 							Elems: &schema.Schema{Type: schema.TypeString},
 						},

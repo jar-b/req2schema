@@ -8,11 +8,11 @@ import (
 func ResourceSomeThing() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
-			"computeEnvironmentOrder": {
+			"compute_environment_order": {
 				Type: schema.TypeList,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"computeEnvironment": {
+						"compute_environment": {
 							Type: schema.TypeString,
 						},
 						"order": {
@@ -21,13 +21,13 @@ func ResourceSomeThing() *schema.Resource {
 					},
 				},
 			},
-			"jobQueueName": {
+			"job_queue_name": {
 				Type: schema.TypeString,
 			},
 			"priority": {
 				Type: schema.TypeFloat,
 			},
-			"schedulingPolicyArn": {
+			"scheduling_policy_arn": {
 				Type: schema.TypeString,
 			},
 			"state": {

@@ -8,14 +8,14 @@ import (
 func ResourceSomeThing() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
-			"capacityProviderStrategy": {
+			"capacity_provider_strategy": {
 				Type: schema.TypeList,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
 						"base": {
 							Type: schema.TypeFloat,
 						},
-						"capacityProvider": {
+						"capacity_provider": {
 							Type: schema.TypeString,
 						},
 						"weight": {
@@ -24,18 +24,18 @@ func ResourceSomeThing() *schema.Resource {
 					},
 				},
 			},
-			"clientToken": {
+			"client_token": {
 				Type: schema.TypeString,
 			},
 			"cluster": {
 				Type: schema.TypeString,
 			},
-			"deploymentConfiguration": {
+			"deployment_configuration": {
 				Type:     schema.TypeList,
 				MaxItems: 1,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"deploymentCircuitBreaker": {
+						"deployment_circuit_breaker": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
@@ -49,16 +49,16 @@ func ResourceSomeThing() *schema.Resource {
 								},
 							},
 						},
-						"maximumPercent": {
+						"maximum_percent": {
 							Type: schema.TypeFloat,
 						},
-						"minimumHealthyPercent": {
+						"minimum_healthy_percent": {
 							Type: schema.TypeFloat,
 						},
 					},
 				},
 			},
-			"deploymentController": {
+			"deployment_controller": {
 				Type:     schema.TypeList,
 				MaxItems: 1,
 				Elems: &schema.Resource{
@@ -69,54 +69,54 @@ func ResourceSomeThing() *schema.Resource {
 					},
 				},
 			},
-			"desiredCount": {
+			"desired_count": {
 				Type: schema.TypeFloat,
 			},
-			"enableECSManagedTags": {
+			"enable_ecs_managed_tags": {
 				Type: schema.TypeBool,
 			},
-			"enableExecuteCommand": {
+			"enable_execute_command": {
 				Type: schema.TypeBool,
 			},
-			"healthCheckGracePeriodSeconds": {
+			"health_check_grace_period_seconds": {
 				Type: schema.TypeFloat,
 			},
-			"launchType": {
+			"launch_type": {
 				Type: schema.TypeString,
 			},
-			"loadBalancers": {
+			"load_balancers": {
 				Type: schema.TypeList,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"containerName": {
+						"container_name": {
 							Type: schema.TypeString,
 						},
-						"containerPort": {
+						"container_port": {
 							Type: schema.TypeFloat,
 						},
-						"loadBalancerName": {
+						"load_balancer_name": {
 							Type: schema.TypeString,
 						},
-						"targetGroupArn": {
+						"target_group_arn": {
 							Type: schema.TypeString,
 						},
 					},
 				},
 			},
-			"networkConfiguration": {
+			"network_configuration": {
 				Type:     schema.TypeList,
 				MaxItems: 1,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"awsvpcConfiguration": {
+						"awsvpc_configuration": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"assignPublicIp": {
+									"assign_public_ip": {
 										Type: schema.TypeString,
 									},
-									"securityGroups": {
+									"security_groups": {
 										Type:  schema.TypeList,
 										Elems: &schema.Schema{Type: schema.TypeString},
 									},
@@ -130,7 +130,7 @@ func ResourceSomeThing() *schema.Resource {
 					},
 				},
 			},
-			"placementConstraints": {
+			"placement_constraints": {
 				Type: schema.TypeList,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
@@ -143,7 +143,7 @@ func ResourceSomeThing() *schema.Resource {
 					},
 				},
 			},
-			"placementStrategy": {
+			"placement_strategy": {
 				Type: schema.TypeList,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
@@ -156,41 +156,41 @@ func ResourceSomeThing() *schema.Resource {
 					},
 				},
 			},
-			"platformVersion": {
+			"platform_version": {
 				Type: schema.TypeString,
 			},
-			"propagateTags": {
+			"propagate_tags": {
 				Type: schema.TypeString,
 			},
 			"role": {
 				Type: schema.TypeString,
 			},
-			"schedulingStrategy": {
+			"scheduling_strategy": {
 				Type: schema.TypeString,
 			},
-			"serviceName": {
+			"service_name": {
 				Type: schema.TypeString,
 			},
-			"serviceRegistries": {
+			"service_registries": {
 				Type: schema.TypeList,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"containerName": {
+						"container_name": {
 							Type: schema.TypeString,
 						},
-						"containerPort": {
+						"container_port": {
 							Type: schema.TypeFloat,
 						},
 						"port": {
 							Type: schema.TypeFloat,
 						},
-						"registryArn": {
+						"registry_arn": {
 							Type: schema.TypeString,
 						},
 					},
 				},
 			},
-			"taskDefinition": {
+			"task_definition": {
 				Type: schema.TypeString,
 			},
 			"tags":     tftags.TagsSchema(),

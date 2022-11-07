@@ -8,25 +8,25 @@ import (
 func ResourceSomeThing() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
-			"availabilityZones": {
+			"availability_zones": {
 				Type:  schema.TypeList,
 				Elems: &schema.Schema{Type: schema.TypeString},
 			},
-			"multiplexSettings": {
+			"multiplex_settings": {
 				Type:     schema.TypeList,
 				MaxItems: 1,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"maximumVideoBufferDelayMilliseconds": {
+						"maximum_video_buffer_delay_milliseconds": {
 							Type: schema.TypeFloat,
 						},
-						"transportStreamBitrate": {
+						"transport_stream_bitrate": {
 							Type: schema.TypeFloat,
 						},
-						"transportStreamId": {
+						"transport_stream_id": {
 							Type: schema.TypeFloat,
 						},
-						"transportStreamReservedBitrate": {
+						"transport_stream_reserved_bitrate": {
 							Type: schema.TypeFloat,
 						},
 					},

@@ -47,3 +47,25 @@ func Test_requestToSchema(t *testing.T) {
 		})
 	}
 }
+
+func Test_toSnakeCase(t *testing.T) {
+	tests := []struct {
+		name string
+		s    string
+		want string
+	}{
+		{"empty", "", ""},
+		{"already snake", "already_snake", "already_snake"},
+		{"one word", "Thing", "thing"},
+		{"multiple words", "AnotherThing", "another_thing"},
+		{"multiple caps start", "HTTPRequest", "http_request"},
+		{"multiple caps end", "RequestID", "request_id"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := toSnakeCase(tt.s); got != tt.want {
+				t.Errorf("toSnakeCase() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

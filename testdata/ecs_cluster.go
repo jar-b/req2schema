@@ -8,11 +8,11 @@ import (
 func ResourceSomeThing() *schema.Resource {
 	return &schema.Resource{
 		Schema: map[string]*schema.Schema{
-			"capacityProviders": {
+			"capacity_providers": {
 				Type:  schema.TypeList,
 				Elems: &schema.Schema{Type: schema.TypeString},
 			},
-			"clusterName": {
+			"cluster_name": {
 				Type: schema.TypeString,
 			},
 			"configuration": {
@@ -20,32 +20,32 @@ func ResourceSomeThing() *schema.Resource {
 				MaxItems: 1,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"executeCommandConfiguration": {
+						"execute_command_configuration": {
 							Type:     schema.TypeList,
 							MaxItems: 1,
 							Elems: &schema.Resource{
 								Schema: map[string]*schema.Schema{
-									"kmsKeyId": {
+									"kms_key_id": {
 										Type: schema.TypeString,
 									},
-									"logConfiguration": {
+									"log_configuration": {
 										Type:     schema.TypeList,
 										MaxItems: 1,
 										Elems: &schema.Resource{
 											Schema: map[string]*schema.Schema{
-												"cloudWatchEncryptionEnabled": {
+												"cloud_watch_encryption_enabled": {
 													Type: schema.TypeBool,
 												},
-												"cloudWatchLogGroupName": {
+												"cloud_watch_log_group_name": {
 													Type: schema.TypeString,
 												},
-												"s3BucketName": {
+												"s3_bucket_name": {
 													Type: schema.TypeString,
 												},
-												"s3EncryptionEnabled": {
+												"s3_encryption_enabled": {
 													Type: schema.TypeBool,
 												},
-												"s3KeyPrefix": {
+												"s3_key_prefix": {
 													Type: schema.TypeString,
 												},
 											},
@@ -60,14 +60,14 @@ func ResourceSomeThing() *schema.Resource {
 					},
 				},
 			},
-			"defaultCapacityProviderStrategy": {
+			"default_capacity_provider_strategy": {
 				Type: schema.TypeList,
 				Elems: &schema.Resource{
 					Schema: map[string]*schema.Schema{
 						"base": {
 							Type: schema.TypeFloat,
 						},
-						"capacityProvider": {
+						"capacity_provider": {
 							Type: schema.TypeString,
 						},
 						"weight": {

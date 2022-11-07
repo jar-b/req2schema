@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"go/format"
+	"regexp"
+	"strings"
 	"text/template"
 )
 
@@ -28,6 +30,11 @@ const (
 	typeTextMap        = "schema.TypeList,"
 	typeTextString     = "schema.TypeString,"
 	typeTextUnknown    = "schema.TypeString, // TODO: unable to identify type"
+)
+
+var (
+	matchFirstCap = regexp.MustCompile("(.)([A-Z][a-z]+)")
+	matchAllCap   = regexp.MustCompile("([a-z0-9])([A-Z])")
 )
 
 type schemaEntry struct {
@@ -84,6 +91,7 @@ func execTemplate(reqData map[string]interface{}) ([]byte, error) {
 		if skipKey(k) {
 			continue
 		}
+		k = toSnakeCase(k)
 		entries[k] = newSchemaEntry(k, v)
 	}
 
@@ -106,6 +114,7 @@ func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
 	if mapItem, ok := entry.(map[string]interface{}); ok {
 		elems := make(map[string]schemaEntry)
 		for k, v := range mapItem {
+			k = toSnakeCase(k)
 			elems[k] = newSchemaEntry(k, v)
 		}
 		sa.Type = typeMap
@@ -117,6 +126,7 @@ func newSchemaEntry(keyName string, entry interface{}) schemaEntry {
 		if mapItem, ok := listItem[0].(map[string]interface{}); ok {
 			elems := make(map[string]schemaEntry)
 			for k, v := range mapItem {
+				k = toSnakeCase(k)
 				elems[k] = newSchemaEntry(k, v)
 			}
 			sa.Type = typeListOfMaps
@@ -189,6 +199,13 @@ func skipKey(k string) bool {
 		}
 	}
 	return false
+}
+
+// toSnakeCase converts a camel case string to snake case
+func toSnakeCase(s string) string {
+	snake := matchFirstCap.ReplaceAllString(s, "${1}_${2}")
+	snake = matchAllCap.ReplaceAllString(snake, "${1}_${2}")
+	return strings.ToLower(snake)
 }
 
 // toValidJSON replaces placeholder documentation values with values that
