@@ -1,11 +1,13 @@
 # req2schema
 
-Generate a terraform provider `Resource` schema from an AWS request schema.
+Generate a terraform provider resource [`Schema`](https://pkg.go.dev/github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema#Schema) 
+from an AWS request schema.
 
 This tool is intended to supplement the Terraform AWS provider's
-[skaff](https://github.com/hashicorp/terraform-provider-aws/tree/main/skaff) tool,
-focusing specifically on a resources schema. `skaff` does not use any external
-data to generate its source files, and therefore populates a placeholder `Schema`.
+[`skaff`](https://github.com/hashicorp/terraform-provider-aws/tree/main/skaff) tool,
+focusing specifically on a resource's `Schema`. `skaff` does not use any external
+data to generate its source files, and instead populates a 
+[placeholder `Schema`](https://github.com/hashicorp/terraform-provider-aws/blob/v4.38.0/skaff/resource/resource.tmpl#L119-L191).
 `req2schema` uses AWS HTTP request schemas to provide a stubbed out terraform resource
 schema with the appropriate key names and data types (including nested objects). This 
 can be helpful for large resources which are time consuming to write by hand.
