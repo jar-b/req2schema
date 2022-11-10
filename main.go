@@ -38,7 +38,10 @@ func main() {
 
 	if out != "" {
 		fmt.Printf("writing to: %s\n", out)
-		os.WriteFile(out, schm, 0644)
+		err := os.WriteFile(out, schm, 0644)
+		if err != nil {
+			log.Fatal(fmt.Errorf("writing output: %w", err))
+		}
 	} else {
 		fmt.Println(string(schm))
 	}
