@@ -1,4 +1,6 @@
 # req2schema
+[![build](https://github.com/jar-b/req2schema/actions/workflows/build.yml/badge.svg)](https://github.com/jar-b/req2schema/actions/workflows/build.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jar-b/req2schema)](https://goreportcard.com/report/github.com/jar-b/req2schema)
 
 Generate a terraform provider resource [`Schema`](https://pkg.go.dev/github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema#Schema) 
 from an AWS request schema.
