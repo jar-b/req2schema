@@ -1,0 +1,664 @@
+{
+   "findings": [ 
+      { 
+         "accountId": "string",
+         "arn": "string",
+         "confidence": number,
+         "createdAt": "string",
+         "description": "string",
+         "id": "string",
+         "partition": "string",
+         "region": "string",
+         "resource": { 
+            "accessKeyDetails": { 
+               "accessKeyId": "string",
+               "principalId": "string",
+               "userName": "string",
+               "userType": "string"
+            },
+            "containerDetails": { 
+               "containerRuntime": "string",
+               "id": "string",
+               "image": "string",
+               "imagePrefix": "string",
+               "name": "string",
+               "securityContext": { 
+                  "privileged": boolean
+               },
+               "volumeMounts": [ 
+                  { 
+                     "mountPath": "string",
+                     "name": "string"
+                  }
+               ]
+            },
+            "ebsVolumeDetails": { 
+               "scannedVolumeDetails": [ 
+                  { 
+                     "deviceName": "string",
+                     "encryptionType": "string",
+                     "kmsKeyArn": "string",
+                     "snapshotArn": "string",
+                     "volumeArn": "string",
+                     "volumeSizeInGB": number,
+                     "volumeType": "string"
+                  }
+               ],
+               "skippedVolumeDetails": [ 
+                  { 
+                     "deviceName": "string",
+                     "encryptionType": "string",
+                     "kmsKeyArn": "string",
+                     "snapshotArn": "string",
+                     "volumeArn": "string",
+                     "volumeSizeInGB": number,
+                     "volumeType": "string"
+                  }
+               ]
+            },
+            "ecsClusterDetails": { 
+               "activeServicesCount": number,
+               "arn": "string",
+               "name": "string",
+               "registeredContainerInstancesCount": number,
+               "runningTasksCount": number,
+               "status": "string",
+               "tags": [ 
+                  { 
+                     "key": "string",
+                     "value": "string"
+                  }
+               ],
+               "taskDetails": { 
+                  "arn": "string",
+                  "containers": [ 
+                     { 
+                        "containerRuntime": "string",
+                        "id": "string",
+                        "image": "string",
+                        "imagePrefix": "string",
+                        "name": "string",
+                        "securityContext": { 
+                           "privileged": boolean
+                        },
+                        "volumeMounts": [ 
+                           { 
+                              "mountPath": "string",
+                              "name": "string"
+                           }
+                        ]
+                     }
+                  ],
+                  "definitionArn": "string",
+                  "group": "string",
+                  "startedAt": number,
+                  "startedBy": "string",
+                  "tags": [ 
+                     { 
+                        "key": "string",
+                        "value": "string"
+                     }
+                  ],
+                  "createdAt": number,
+                  "version": "string",
+                  "volumes": [ 
+                     { 
+                        "hostPath": { 
+                           "path": "string"
+                        },
+                        "name": "string"
+                     }
+                  ]
+               }
+            },
+            "eksClusterDetails": { 
+               "arn": "string",
+               "createdAt": number,
+               "name": "string",
+               "status": "string",
+               "tags": [ 
+                  { 
+                     "key": "string",
+                     "value": "string"
+                  }
+               ],
+               "vpcId": "string"
+            },
+            "instanceDetails": { 
+               "availabilityZone": "string",
+               "iamInstanceProfile": { 
+                  "arn": "string",
+                  "id": "string"
+               },
+               "imageDescription": "string",
+               "imageId": "string",
+               "instanceId": "string",
+               "instanceState": "string",
+               "instanceType": "string",
+               "launchTime": "string",
+               "networkInterfaces": [ 
+                  { 
+                     "ipv6Addresses": [ "string" ],
+                     "networkInterfaceId": "string",
+                     "privateDnsName": "string",
+                     "privateIpAddress": "string",
+                     "privateIpAddresses": [ 
+                        { 
+                           "privateDnsName": "string",
+                           "privateIpAddress": "string"
+                        }
+                     ],
+                     "publicDnsName": "string",
+                     "publicIp": "string",
+                     "securityGroups": [ 
+                        { 
+                           "groupId": "string",
+                           "groupName": "string"
+                        }
+                     ],
+                     "subnetId": "string",
+                     "vpcId": "string"
+                  }
+               ],
+               "outpostArn": "string",
+               "platform": "string",
+               "productCodes": [ 
+                  { 
+                     "productCodeId": "string",
+                     "productCodeType": "string"
+                  }
+               ],
+               "tags": [ 
+                  { 
+                     "key": "string",
+                     "value": "string"
+                  }
+               ]
+            },
+            "kubernetesDetails": { 
+               "kubernetesUserDetails": { 
+                  "groups": [ "string" ],
+                  "uid": "string",
+                  "username": "string"
+               },
+               "kubernetesWorkloadDetails": { 
+                  "containers": [ 
+                     { 
+                        "containerRuntime": "string",
+                        "id": "string",
+                        "image": "string",
+                        "imagePrefix": "string",
+                        "name": "string",
+                        "securityContext": { 
+                           "privileged": boolean
+                        },
+                        "volumeMounts": [ 
+                           { 
+                              "mountPath": "string",
+                              "name": "string"
+                           }
+                        ]
+                     }
+                  ],
+                  "hostNetwork": boolean,
+                  "name": "string",
+                  "namespace": "string",
+                  "type": "string",
+                  "uid": "string",
+                  "volumes": [ 
+                     { 
+                        "hostPath": { 
+                           "path": "string"
+                        },
+                        "name": "string"
+                     }
+                  ]
+               }
+            },
+            "lambdaDetails": { 
+               "description": "string",
+               "functionArn": "string",
+               "functionName": "string",
+               "functionVersion": "string",
+               "lastModifiedAt": number,
+               "revisionId": "string",
+               "role": "string",
+               "tags": [ 
+                  { 
+                     "key": "string",
+                     "value": "string"
+                  }
+               ],
+               "vpcConfig": { 
+                  "securityGroups": [ 
+                     { 
+                        "groupId": "string",
+                        "groupName": "string"
+                     }
+                  ],
+                  "subnetIds": [ "string" ],
+                  "vpcId": "string"
+               }
+            },
+            "rdsDbInstanceDetails": { 
+               "dbClusterIdentifier": "string",
+               "dbInstanceArn": "string",
+               "dbInstanceIdentifier": "string",
+               "engine": "string",
+               "engineVersion": "string",
+               "tags": [ 
+                  { 
+                     "key": "string",
+                     "value": "string"
+                  }
+               ]
+            },
+            "rdsDbUserDetails": { 
+               "application": "string",
+               "authMethod": "string",
+               "database": "string",
+               "ssl": "string",
+               "user": "string"
+            },
+            "resourceType": "string",
+            "s3BucketDetails": [ 
+               { 
+                  "arn": "string",
+                  "createdAt": number,
+                  "defaultServerSideEncryption": { 
+                     "encryptionType": "string",
+                     "kmsMasterKeyArn": "string"
+                  },
+                  "name": "string",
+                  "owner": { 
+                     "id": "string"
+                  },
+                  "publicAccess": { 
+                     "effectivePermission": "string",
+                     "permissionConfiguration": { 
+                        "accountLevelPermissions": { 
+                           "blockPublicAccess": { 
+                              "blockPublicAcls": boolean,
+                              "blockPublicPolicy": boolean,
+                              "ignorePublicAcls": boolean,
+                              "restrictPublicBuckets": boolean
+                           }
+                        },
+                        "bucketLevelPermissions": { 
+                           "accessControlList": { 
+                              "allowsPublicReadAccess": boolean,
+                              "allowsPublicWriteAccess": boolean
+                           },
+                           "blockPublicAccess": { 
+                              "blockPublicAcls": boolean,
+                              "blockPublicPolicy": boolean,
+                              "ignorePublicAcls": boolean,
+                              "restrictPublicBuckets": boolean
+                           },
+                           "bucketPolicy": { 
+                              "allowsPublicReadAccess": boolean,
+                              "allowsPublicWriteAccess": boolean
+                           }
+                        }
+                     }
+                  },
+                  "tags": [ 
+                     { 
+                        "key": "string",
+                        "value": "string"
+                     }
+                  ],
+                  "type": "string"
+               }
+            ]
+         },
+         "schemaVersion": "string",
+         "service": { 
+            "action": { 
+               "actionType": "string",
+               "awsApiCallAction": { 
+                  "affectedResources": { 
+                     "string" : "string" 
+                  },
+                  "api": "string",
+                  "callerType": "string",
+                  "domainDetails": { 
+                     "domain": "string"
+                  },
+                  "errorCode": "string",
+                  "remoteAccountDetails": { 
+                     "accountId": "string",
+                     "affiliated": boolean
+                  },
+                  "remoteIpDetails": { 
+                     "city": { 
+                        "cityName": "string"
+                     },
+                     "country": { 
+                        "countryCode": "string",
+                        "countryName": "string"
+                     },
+                     "geoLocation": { 
+                        "lat": number,
+                        "lon": number
+                     },
+                     "ipAddressV4": "string",
+                     "organization": { 
+                        "asn": "string",
+                        "asnOrg": "string",
+                        "isp": "string",
+                        "org": "string"
+                     }
+                  },
+                  "serviceName": "string",
+                  "userAgent": "string"
+               },
+               "dnsRequestAction": { 
+                  "blocked": boolean,
+                  "domain": "string",
+                  "protocol": "string"
+               },
+               "kubernetesApiCallAction": { 
+                  "parameters": "string",
+                  "remoteIpDetails": { 
+                     "city": { 
+                        "cityName": "string"
+                     },
+                     "country": { 
+                        "countryCode": "string",
+                        "countryName": "string"
+                     },
+                     "geoLocation": { 
+                        "lat": number,
+                        "lon": number
+                     },
+                     "ipAddressV4": "string",
+                     "organization": { 
+                        "asn": "string",
+                        "asnOrg": "string",
+                        "isp": "string",
+                        "org": "string"
+                     }
+                  },
+                  "requestUri": "string",
+                  "sourceIps": [ "string" ],
+                  "statusCode": number,
+                  "userAgent": "string",
+                  "verb": "string"
+               },
+               "networkConnectionAction": { 
+                  "blocked": boolean,
+                  "connectionDirection": "string",
+                  "localIpDetails": { 
+                     "ipAddressV4": "string"
+                  },
+                  "localPortDetails": { 
+                     "port": number,
+                     "portName": "string"
+                  },
+                  "protocol": "string",
+                  "remoteIpDetails": { 
+                     "city": { 
+                        "cityName": "string"
+                     },
+                     "country": { 
+                        "countryCode": "string",
+                        "countryName": "string"
+                     },
+                     "geoLocation": { 
+                        "lat": number,
+                        "lon": number
+                     },
+                     "ipAddressV4": "string",
+                     "organization": { 
+                        "asn": "string",
+                        "asnOrg": "string",
+                        "isp": "string",
+                        "org": "string"
+                     }
+                  },
+                  "remotePortDetails": { 
+                     "port": number,
+                     "portName": "string"
+                  }
+               },
+               "portProbeAction": { 
+                  "blocked": boolean,
+                  "portProbeDetails": [ 
+                     { 
+                        "localIpDetails": { 
+                           "ipAddressV4": "string"
+                        },
+                        "localPortDetails": { 
+                           "port": number,
+                           "portName": "string"
+                        },
+                        "remoteIpDetails": { 
+                           "city": { 
+                              "cityName": "string"
+                           },
+                           "country": { 
+                              "countryCode": "string",
+                              "countryName": "string"
+                           },
+                           "geoLocation": { 
+                              "lat": number,
+                              "lon": number
+                           },
+                           "ipAddressV4": "string",
+                           "organization": { 
+                              "asn": "string",
+                              "asnOrg": "string",
+                              "isp": "string",
+                              "org": "string"
+                           }
+                        }
+                     }
+                  ]
+               },
+               "rdsLoginAttemptAction": { 
+                  "LoginAttributes": [ 
+                     { 
+                        "application": "string",
+                        "failedLoginAttempts": number,
+                        "successfulLoginAttempts": number,
+                        "user": "string"
+                     }
+                  ],
+                  "remoteIpDetails": { 
+                     "city": { 
+                        "cityName": "string"
+                     },
+                     "country": { 
+                        "countryCode": "string",
+                        "countryName": "string"
+                     },
+                     "geoLocation": { 
+                        "lat": number,
+                        "lon": number
+                     },
+                     "ipAddressV4": "string",
+                     "organization": { 
+                        "asn": "string",
+                        "asnOrg": "string",
+                        "isp": "string",
+                        "org": "string"
+                     }
+                  }
+               }
+            },
+            "additionalInfo": { 
+               "type": "string",
+               "value": "string"
+            },
+            "archived": boolean,
+            "count": number,
+            "detectorId": "string",
+            "ebsVolumeScanDetails": { 
+               "scanCompletedAt": number,
+               "scanDetections": { 
+                  "highestSeverityThreatDetails": { 
+                     "count": number,
+                     "severity": "string",
+                     "threatName": "string"
+                  },
+                  "scannedItemCount": { 
+                     "files": number,
+                     "totalGb": number,
+                     "volumes": number
+                  },
+                  "threatDetectedByName": { 
+                     "itemCount": number,
+                     "shortened": boolean,
+                     "threatNames": [ 
+                        { 
+                           "filePaths": [ 
+                              { 
+                                 "fileName": "string",
+                                 "filePath": "string",
+                                 "hash": "string",
+                                 "volumeArn": "string"
+                              }
+                           ],
+                           "itemCount": number,
+                           "name": "string",
+                           "severity": "string"
+                        }
+                     ],
+                     "uniqueThreatNameCount": number
+                  },
+                  "threatsDetectedItemCount": { 
+                     "files": number
+                  }
+               },
+               "scanId": "string",
+               "scanStartedAt": number,
+               "scanType": "string",
+               "sources": [ "string" ],
+               "triggerFindingId": "string"
+            },
+            "eventFirstSeen": "string",
+            "eventLastSeen": "string",
+            "evidence": { 
+               "threatIntelligenceDetails": [ 
+                  { 
+                     "threatListName": "string",
+                     "threatNames": [ "string" ]
+                  }
+               ]
+            },
+            "featureName": "string",
+            "resourceRole": "string",
+            "runtimeDetails": { 
+               "context": { 
+                  "addressFamily": "string",
+                  "fileSystemType": "string",
+                  "flags": [ "string" ],
+                  "ianaProtocolNumber": number,
+                  "ldPreloadValue": "string",
+                  "libraryPath": "string",
+                  "memoryRegions": [ "string" ],
+                  "modifiedAt": number,
+                  "modifyingProcess": { 
+                     "euid": number,
+                     "executablePath": "string",
+                     "executableSha256": "string",
+                     "lineage": [ 
+                        { 
+                           "euid": number,
+                           "executablePath": "string",
+                           "name": "string",
+                           "namespacePid": number,
+                           "parentUuid": "string",
+                           "pid": number,
+                           "startTime": number,
+                           "userId": number,
+                           "uuid": "string"
+                        }
+                     ],
+                     "name": "string",
+                     "namespacePid": number,
+                     "parentUuid": "string",
+                     "pid": number,
+                     "pwd": "string",
+                     "startTime": number,
+                     "user": "string",
+                     "userId": number,
+                     "uuid": "string"
+                  },
+                  "moduleFilePath": "string",
+                  "moduleName": "string",
+                  "moduleSha256": "string",
+                  "mountSource": "string",
+                  "mountTarget": "string",
+                  "releaseAgentPath": "string",
+                  "runcBinaryPath": "string",
+                  "scriptPath": "string",
+                  "shellHistoryFilePath": "string",
+                  "socketPath": "string",
+                  "targetProcess": { 
+                     "euid": number,
+                     "executablePath": "string",
+                     "executableSha256": "string",
+                     "lineage": [ 
+                        { 
+                           "euid": number,
+                           "executablePath": "string",
+                           "name": "string",
+                           "namespacePid": number,
+                           "parentUuid": "string",
+                           "pid": number,
+                           "startTime": number,
+                           "userId": number,
+                           "uuid": "string"
+                        }
+                     ],
+                     "name": "string",
+                     "namespacePid": number,
+                     "parentUuid": "string",
+                     "pid": number,
+                     "pwd": "string",
+                     "startTime": number,
+                     "user": "string",
+                     "userId": number,
+                     "uuid": "string"
+                  }
+               },
+               "process": { 
+                  "euid": number,
+                  "executablePath": "string",
+                  "executableSha256": "string",
+                  "lineage": [ 
+                     { 
+                        "euid": number,
+                        "executablePath": "string",
+                        "name": "string",
+                        "namespacePid": number,
+                        "parentUuid": "string",
+                        "pid": number,
+                        "startTime": number,
+                        "userId": number,
+                        "uuid": "string"
+                     }
+                  ],
+                  "name": "string",
+                  "namespacePid": number,
+                  "parentUuid": "string",
+                  "pid": number,
+                  "pwd": "string",
+                  "startTime": number,
+                  "user": "string",
+                  "userId": number,
+                  "uuid": "string"
+               }
+            },
+            "serviceName": "string",
+            "userFeedback": "string"
+         },
+         "severity": number,
+         "title": "string",
+         "type": "string",
+         "updatedAt": "string"
+      }
+   ]
+}

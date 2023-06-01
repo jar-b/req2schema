@@ -16,6 +16,8 @@ func Test_requestToSchema(t *testing.T) {
 	ecsClusterGo, _ := os.ReadFile("testdata/ecs_cluster.go")
 	ecsServiceReq, _ := os.ReadFile("testdata/ecs_service.json")
 	ecsServiceGo, _ := os.ReadFile("testdata/ecs_service.go")
+	guarddutyFindingsReq, _ := os.ReadFile("testdata/guardduty_findings.json")
+	guarddutyFindingsGo, _ := os.ReadFile("testdata/guardduty_findings.go")
 	medialiveChannelReq, _ := os.ReadFile("testdata/medialive_channel.json")
 	medialiveChannelGo, _ := os.ReadFile("testdata/medialive_channel.go")
 	medialiveMultiplexReq, _ := os.ReadFile("testdata/medialive_multiplex.json")
@@ -33,6 +35,7 @@ func Test_requestToSchema(t *testing.T) {
 		{"batch job queue", batchJobQueueReq, batchJobQueueGo, false},
 		{"ecs cluster", ecsClusterReq, ecsClusterGo, false},
 		{"ecs service", ecsServiceReq, ecsServiceGo, false},
+		{"guardduty findings", guarddutyFindingsReq, guarddutyFindingsGo, false},
 		{"medialive channel", medialiveChannelReq, medialiveChannelGo, false},
 		{"medialive multiplex", medialiveMultiplexReq, medialiveMultiplexGo, false},
 	}
