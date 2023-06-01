@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	_ "embed"
 	"encoding/json"
 	"fmt"
 	"go/format"
@@ -37,53 +38,15 @@ var (
 	matchAllCap   = regexp.MustCompile("([a-z0-9])([A-Z])")
 )
 
+//go:embed templates/sdkschema.tmpl
+var schemaTemplate string
+
 type schemaEntry struct {
 	KeyName  string
 	Type     int
 	TypeText string
 	Elems    map[string]schemaEntry
 }
-
-var schemaTemplate = `
-{{ define "schemaItem" -}}
-    "{{.KeyName}}": {
-        Type: {{.TypeText}}
-        {{- if eq .Type 6 }}
-        MaxItems: 1,
-        {{- end }}
-        {{- if .Elems }}
-        Elems: &schema.Resource{
-			Schema: map[string]*schema.Schema{
-            {{- range .Elems }}
-                {{ template "schemaItem" . }}
-            {{- end }}
-			},
-        },
-        {{- end }}
-        {{- if eq .Type 5 }}
-        Elems: &schema.Schema{Type: schema.TypeString},
-        {{- end }}
-    },
-{{- end }}
-package someservice
-
-import (
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	tftags "github.com/hashicorp/terraform-provider-aws/internal/tags"
-)
-
-func ResourceSomeThing() *schema.Resource {
-    return &schema.Resource{
-        Schema: map[string]*schema.Schema{
-            {{ range . -}}
-            {{ template "schemaItem" . }}
-            {{ end -}}
-			"tags":     tftags.TagsSchema(),
-			"tags_all": tftags.TagsSchemaComputed(),
-        },
-    }
-}
-`
 
 func execTemplate(reqData map[string]interface{}) ([]byte, error) {
 	entries := make(map[string]schemaEntry)
