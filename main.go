@@ -9,15 +9,12 @@ import (
 
 var out string
 
-func init() {
+func main() {
 	// slightly better usage output
 	flag.Usage = func() {
 		fmt.Fprintf(flag.CommandLine.Output(), "Usage: %s [flags] [filename]\n\nFlags:\n", os.Args[0])
 		flag.PrintDefaults()
 	}
-}
-
-func main() {
 	flag.StringVar(&out, "out", "", "output file (optional, prints to stdout if omitted)")
 	flag.Parse()
 
